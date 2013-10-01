@@ -1,0 +1,1705 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"function",
+				"function_exists"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"l",
+				"like"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"never",
+				"neverever_get_confession_box"
+			],
+			[
+				"backg",
+				"background"
+			],
+			[
+				"user",
+				"user_liked_items"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"liked",
+				"liked_items"
+			],
+			[
+				"lik",
+				"likes_count"
+			],
+			[
+				"update_post",
+				"update_post_meta"
+			],
+			[
+				"Confession",
+				"ConfessionsList-item"
+			],
+			[
+				"confession",
+				"confessionTitle"
+			],
+			[
+				"su",
+				"submitConfessionStepsStep"
+			],
+			[
+				"tempn",
+				"tempname"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"wpmen",
+				"wp_nav_menu"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"p",
+				"pre-line"
+			],
+			[
+				"clas",
+				"classes"
+			],
+			[
+				"json_",
+				"json_encode"
+			],
+			[
+				"rewind",
+				"rewind_posts"
+			],
+			[
+				"first-",
+				"first-of-type  (pseudo-class)"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"a",
+				"none  (value)"
+			],
+			[
+				"n",
+				"nth-child(  (pseudo-class)"
+			],
+			[
+				"backgro",
+				"background-image"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"plug",
+				"plugin_info"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"first",
+				":first-child"
+			],
+			[
+				"enable",
+				"enable_extended_return_values"
+			],
+			[
+				"custom",
+				"custom_field_key"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"one_l",
+				"one_plugin_slug"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"list-sty",
+				"list-style-type"
+			],
+			[
+				"de",
+				"description"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"obje",
+				"object_name"
+			],
+			[
+				"op",
+				"option_page"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"new",
+				"new_lis"
+			],
+			[
+				"strt",
+				"strtolower"
+			],
+			[
+				"con",
+				"connector_slug"
+			],
+			[
+				"co",
+				"connector"
+			],
+			[
+				"mr",
+				"merged_fields"
+			],
+			[
+				"array_in",
+				"array_intersect_key"
+			],
+			[
+				"key",
+				"keys_possibly_wrong_but_new_order  (variable)"
+			],
+			[
+				"exi",
+				"existing_fields_copy"
+			],
+			[
+				"func",
+				"function_exists"
+			],
+			[
+				"fun",
+				"function_exists"
+			],
+			[
+				"field",
+				"fieldgroup"
+			],
+			[
+				"tes",
+				"testclass"
+			],
+			[
+				"border-r",
+				"border-right"
+			],
+			[
+				"mysql",
+				"mysql_connect"
+			],
+			[
+				"get_de",
+				"get_defined_constants"
+			],
+			[
+				"fred",
+				"freddys_marker"
+			],
+			[
+				"fre",
+				"freddys_map"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"str_rep",
+				"str_replace"
+			],
+			[
+				"registp",
+				"register_post_type"
+			],
+			[
+				"prin",
+				"print_r"
+			],
+			[
+				"wp",
+				"wptexturize"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 2943,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 60398,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "readme.txt",
+			"settings":
+			{
+				"buffer_size": 23633,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 181.0,
+		"selected_items":
+		[
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"du",
+				"File: Duplicate"
+			],
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"dupl",
+				"File: Duplicate"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"cop",
+				"File: Copy Name"
+			],
+			[
+				"err",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"foramt",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"format",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"json",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"prett",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"rett",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"pr",
+				"Pretty JSON: Reformat (Pretty Print) JSON"
+			],
+			[
+				"er",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"toggle op",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"side",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"lint",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"emmet",
+				"Emmet: Next Edit Point"
+			],
+			[
+				"hold",
+				"Hhhhold: Insert Image"
+			],
+			[
+				"pack",
+				"Package Control: Disable Package"
+			],
+			[
+				"dupli",
+				"File: Duplicate"
+			],
+			[
+				"finder",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"error",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"ter",
+				"Open in terminal"
+			],
+			[
+				"form",
+				"Format: Javascript"
+			],
+			[
+				"term",
+				"Open in terminal"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"gitpu",
+				"Git: Pull"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wordwra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"disabl",
+				"SublimeLinter: Disable Linting"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"zen",
+				"Zen Coding: Delete tag"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 516.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/bonny/Dropbox/Plugins/SVN/cms-tree-page-view/tags/1.2.14/readme.txt",
+		"/Users/bonny/Dropbox/Plugins/SVN/cms-tree-page-view/trunk/cms-tree-page-view.sublime-project",
+		"/Users/bonny/Dropbox/Plugins/SVN/cms-tree-page-view/trunk/scripts/cms_tree_page_view.js",
+		"/Users/bonny/Documents/Sites/playground-root/wp-includes/cache.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/plugins/simple-fields/simple_fields.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-includes/class-feed.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-includes/option.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-admin/credits.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-admin/includes/class-wp-ms-themes-list-table.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-admin/includes/class-wp-plugins-list-table.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/ep/ep-simple-front-end-edit-buttons.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/.gitignore",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/README.md",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/includes-enabled/1.test.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/includes-enabled/2.test.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/includes-enabled/test.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/includes-enabled/5.test.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-admin/includes/dashboard.php",
+		"/Users/bonny/Documents/Sites/playground-nightly/wordpress/wp-content/themes/playground-theme/functions.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-admin/includes/update.php",
+		"/Users/bonny/Documents/Sites/playground-root/wp-config.php",
+		"/Users/bonny/Documents/Sites/playground-root/assets/themes/wp-theme-bonny-starter/parts/shared/html-header.php",
+		"/Users/bonny/Dropbox/Plugins/GIT/Simple-Fields/functions (BonnyAir2013's conflicted copy 2013-09-26).php",
+		"/Users/bonny/Dropbox/Plugins/GIT/Simple-Fields/functions.php",
+		"/Users/bonny/Documents/Sites/playground-root/playground-root.sublime-workspace",
+		"/Users/bonny/Dropbox/Apps/Transmit/Favorites/Favorites.sqlite",
+		"/Users/bonny/Documents/Sites/Localhost/index.php",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/example_company_2_en.xml",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/company_company_description.xsl",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/functions-npm.php",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/inc.templates.xsl",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/companies_overview.xsl",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/inc.translations.xml",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/assets/css/ngm.css",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/inc.variables.xsl",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/CompanyDataSchema_1.0.xsd",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/XML/example_company_1_en.xml",
+		"/Users/bonny/Documents/Sites/ngm/wp-content/themes/ngm/style.css",
+		"/Users/bonny/Documents/Sites/ngm/ngm.sublime-project",
+		"/Users/bonny/Documents/Sites/ngm/ngm.sublime-workspace",
+		"/Users/bonny/Documents/Localhost/EarthPeople/ngm.sublime-project",
+		"/Users/bonny/Documents/Localhost/EarthPeople/ngm/xmlrpc.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/ngm/wp-load.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/ngm/wp-config.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/ngm/wp-content/themes/ngm/functions.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-admin/includes/file.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-admin/includes/media.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/style-animations.css",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/ep/ep.js",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-includes/class-wp-admin-bar.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/ep/ep-functions.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/html-header.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/ep/ep-simple-front-end-edit-buttons.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/front-page.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/.htaccess",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/handlebars.js/src/parser-suffix.js",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-config.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/404.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/single.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/template-submit.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/style.css",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/style-submit.css",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/ep/scripts.js",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/functions.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/header.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/template-top.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/template-latest.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/modernizr.js",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/languages/sv_SE.po",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/modernizr/grunt.js",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/languages/admin-sv_SE.po",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-includes/query.php",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/index.php",
+		"/Users/bonny/Desktop/ngm/CompanyDataSchema_1.0.xsd",
+		"/Users/bonny/Documents/Localhost/EarthPeople/neverever/app/wp/wp-content/plugins/simple-fields/functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-config.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/ep/ep-functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/plugins/simple-fields/functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/index.php",
+		"/tmp/phprun-output.tmp",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/.htaccess",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/style.css",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/ep/ep-simple-front-end-edit-buttons.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/tempo/classes/db/117682-tempofestival.sql",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/style-header.css",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/ep/scripts.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/single.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/html-header.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/header.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/footer.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/single-bekannelse.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/template-submit.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/jquery-cycle2/jquery.cycle2.core.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/jquery-cycle2/cycle2.jquery.json",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/theme-compat/header.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/page.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/parts/shared/html-footer.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/includes/file.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/ep/fb.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/ngm/wp-content/themes/ngm/functions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/comment.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/includes/media.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/custom-background.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/post.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/custom-header.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/index.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/fb-channel.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/handlebars.js/dist/handlebars.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/handlebars.js/dist/handlebars.runtime.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/template-submit.html",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/class-simplepie.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/link-template.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/class-wp-editor.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/includes/ajax-actions.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-admin/admin-ajax.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/bower.json",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/js/wplink.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/js/wplink.min.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/404.php",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/.bowerrc",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/bower.json",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/jquery/bower.json",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-content/themes/neverever/js/jquery-extra-selectors.js",
+		"/Users/bonny/Dropbox/Localhost/EarthPeople/neverever/app/wp/wp-includes/theme-compat/footer.php",
+		"/Users/bonny/Dropbox/Webb/bonnys-wordpress-stuff/ep-theme/404.php",
+		"/Users/bonny/Dropbox/Webb/bonnys-wordpress-stuff/ep-theme/parts/shared/html-header.php"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"*",
+			"-*.js",
+			"",
+			".*php",
+			"",
+			"/Users/bonny/Dropbox/Localhost/wptrunk",
+			"/Users/bonny/Dropbox/Webb/WordPress-GIT",
+			"",
+			"<open folders>",
+			"",
+			"<?php"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"menu_order, post_title",
+			"get_userdata",
+			"cms_tpv_get_the_modified_author",
+			"st-type-dashb",
+			"Select where to show a tree for pages and custom post types\n\n",
+			"cms_tpv_save_settings",
+			"save",
+			"$screen",
+			"screen->post_type",
+			"on post",
+			"init cms tree page view",
+			"inline_edit",
+			"cms_tpv_install",
+			"cms_tpv_get_options",
+			"add_open_graph_tags",
+			"ion clean_post_cache",
+			"delete",
+			"ion wp_cache_incr",
+			"ns_key",
+			"wp_cache_incr",
+			"n wp_cache_incr",
+			"wp_cache_incr",
+			"n set_transient",
+			"n get_site_transient(",
+			"get_site_transient(",
+			"wp_cache_incr",
+			"ion wp_cache_flush",
+			"ion wp_cache_delete(",
+			"page_",
+			"add_page_slug_to_body_class",
+			"page_",
+			"n get_template_part",
+			"add_page_css_has_children",
+			"		\n",
+			"		",
+			"FALSE",
+			"TRUE",
+			"ep",
+			"ar ep = window",
+			"var_template_include",
+			"update_right_now_message",
+			"wp-version-message",
+			"X-UA-Compatible",
+			"cache_group",
+			"is_Debug",
+			"FALSE",
+			"TRUE",
+			"true",
+			"set_Menu",
+			"comp",
+			"coma",
+			"omsattning",
+			"avskrivningar",
+			"före avskrivningar",
+			"Rörelseresultat före avskrivningar",
+			"mode=\"",
+			"table_income_statemant",
+			"507",
+			"2012",
+			"omsättning",
+			"resultat",
+			"earningsAfterNetFinancialItems",
+			"xml",
+			"2009",
+			"\n",
+			"270",
+			"KeyIndicatorsForPeriod",
+			"apply-te",
+			",",
+			"TabCompanyMatureness",
+			"--",
+			"<string",
+			"<xsl:param name=\"",
+			"strCEO",
+			"Headline",
+			"Advisors",
+			"Subsidiaries",
+			"Owners",
+			"Matureness",
+			"KeyIndicators",
+			"TabCompanyDescription",
+			"back",
+			"HeadlineCompaniesOnNPM",
+			"str",
+			"swfobject",
+			".photoBrowser",
+			"photoBrowser-close",
+			"font-fam",
+			"font",
+			"-close",
+			"close",
+			"ja, jag har läst",
+			"submit-confession-confirmation-message",
+			"u med och tävlar elle",
+			"n get_term_by",
+			"get_term_by",
+			"require",
+			"functions",
+			"require(",
+			"include",
+			"overr",
+			"media_handle_sideload",
+			"post_id",
+			"wp_handle_sideload",
+			"sideload",
+			"is_image",
+			"is_iamge",
+			"elms.body",
+			"elms.bo",
+			"document.body",
+			"elms.body",
+			"wook",
+			".ConfessionsList",
+			"ConfessionsList--",
+			"add_menus",
+			"thumb",
+			"mest gillade",
+			"moderni",
+			"/home/earthpeople/.htpasswd",
+			"40%",
+			".SubmitConfession-button",
+			"ladda upp en bild",
+			"handleb",
+			"template-",
+			"x-tmpl",
+			"x-templ",
+			"close",
+			"<button"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"false",
+			"true",
+			"false",
+			"true",
+			"example.com",
+			"http://example.com/wordpress/",
+			"<?php ",
+			"<?php echo ",
+			".simple-history-no-more-items ",
+			"$one_new_field",
+			"		foreach($new_field_group[\"fields\"] as $oneField) {\n			\n			// Set up default values for this field\n			$fields[$field_id] = array();\n			$field_slug = \"field_$field_id\";\n			$field_defaults = array(\n					\"name\"        => \"\",\n					\"slug\"        => $field_slug,\n					\"description\" => \"\",\n					\"type\"        => \"\",\n					\"type_post_options\" => array(\n						\"enabled_post_types\" => array(), \n						\"additional_arguments\" => \"\"\n					),\n					\"type_taxonomyterm_options\" => array(\n						\"additional_arguments\" => \"\"\n					),\n					\"id\"      => \"\",\n					\"deleted\" => 0\n			);\n			\n			// If a field with this index/id exists then merge that fields values with our default values\n			// @todo: should check slug here, it does some wierd index thingie instead\n			// so if you add one field in php, then one in the gui, and then extend the php with one more field = \n			// field from gui is overwritten since it get's the id that the php version want\n			// use only slug instead and we should be fine\n#$field_groups[$field_group_id]\n#echo \"oneField:\";\n#sf_d($oneField);\n#sf_d($field_groups[$field_group_id]['fields']);\n#sf_d($new_field_group[\"fields\"]);\n/*\nArray\n(\n    [type] => file\n    [slug] => image_id\n    [name] => Image\n    [description] => Choose image for this slide\n)\n*/\n\n// Find id of possibly existing field using the slug\n$field_id_for_slug = NULL;\nforeach ($field_groups[$field_group_id][\"fields\"] as $one_field) {\n	#$one_fi\n	if ($one_field[\"slug\"] == $) {\n\n	}\n	sf_d($one_field);\n}\n			if (isset($field_groups[$field_group_id]['fields'][$field_id])) {\n				$field_defaults = simple_fields_merge_arrays($field_defaults, $field_groups[$field_group_id]['fields'][$field_id]);\n			}\n			\n			// Do wierd stuff with field default values\n			foreach($field_defaults as $oneDefaultFieldKey => $oneDefaultFieldValue) {\n				\n				if ($oneDefaultFieldKey == \"id\") {\n					$fields[$field_id][\"id\"] = $field_id;\n				} else {\n					if (!isset($oneField[$oneDefaultFieldKey])) {\n						$fields[$field_id][$oneDefaultFieldKey] = $oneDefaultFieldValue;\n					}\n					\n				}\n				\n				// If the default key is an array\n				if (isset($oneField[$oneDefaultFieldKey]) && is_array($oneField[$oneDefaultFieldKey]) && !empty($oneField[$oneDefaultFieldKey])) {\n\n					// If this is an array with options for a field type\n					// For example \"type_post_options\" or \"type_taxonomyterm_options\"\n					$options_type = preg_replace(\"/type_([a-z]+)_options/i\", '$1', $oneDefaultFieldKey);\n					if (!empty($options_type)) {\n					\n						foreach(array_keys($oneField[$oneDefaultFieldKey]) as $optionKey) {\n\n							if (is_numeric($optionKey)) {\n								$newOptionKey = $options_type . \"_num_\" . $optionKey;\n								$fields[$field_id][$oneDefaultFieldKey][$newOptionKey] = $oneField[$oneDefaultFieldKey][$optionKey];\n								unset($fields[$field_id][$oneDefaultFieldKey][$optionKey]);\n								$optionKey = $newOptionKey;\n							}\n							if (isset($fields[$field_id][$oneDefaultFieldKey][$optionKey]) && is_array($fields[$field_id][$oneDefaultFieldKey][$optionKey]) && !empty($fields[$field_id][$oneDefaultFieldKey][$optionKey][\"value\"])) {\n								if (!isset($fields[$field_id][$oneDefaultFieldKey][$optionKey][\"deleted\"])) {\n									$fields[$field_id][$oneDefaultFieldKey][$optionKey][\"deleted\"] = 0;\n								}\n							}\n							\n						} // foreach\n						\n					}\n				}\n				\n				if (!isset($fields[$field_id][$oneDefaultFieldKey])) {\n					$fields[$field_id][$oneDefaultFieldKey] = $oneDefaultFieldValue;\n				}\n			}\n			\n			$field_id++;\n		"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "functions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 60398,
+						"regions":
+						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										11534,
+										11534
+									],
+									[
+										40539,
+										40539
+									]
+								],
+								"scope": "bookmarks"
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "readme.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 23633,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"project": "cms-tree-page-view.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"read",
+				"readme.txt"
+			],
+			[
+				"post.php",
+				"wp-admin/post.php"
+			],
+			[
+				"sharhe",
+				"assets/themes/wp-theme-bonny-starter/parts/shared/header.php"
+			],
+			[
+				"htmlfooter",
+				"assets/themes/wp-theme-bonny-starter/parts/shared/html-footer.php"
+			],
+			[
+				"partshead",
+				"assets/themes/wp-theme-bonny-starter/parts/shared/html-header.php"
+			],
+			[
+				"wp-config",
+				"wp-config.php"
+			],
+			[
+				"themereadme",
+				"assets/themes/wp-theme-bonny-starter/README.md"
+			],
+			[
+				"transxml",
+				"wp-content/themes/ngm/XML/inc.translations.xml"
+			],
+			[
+				"ncss",
+				"wp-content/themes/ngm/assets/css/ngm.css"
+			],
+			[
+				"example_company_1_en",
+				"wp-content/themes/ngm/XML/example_company_1_en.xml"
+			],
+			[
+				"ngm.css",
+				"wp-content/themes/ngm/assets/css/ngm.css"
+			],
+			[
+				"stylecss",
+				"wp-content/themes/ngm/style.css"
+			],
+			[
+				"wpconf",
+				"wp-config.php"
+			],
+			[
+				"neverstylecss",
+				"app/wp/wp-content/themes/neverever/style-submit.css"
+			],
+			[
+				"submit",
+				"app/wp/wp-content/themes/neverever/template-submit.php"
+			],
+			[
+				"anim",
+				"app/wp/wp-content/themes/neverever/style-animations.css"
+			],
+			[
+				"funct",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"scripts.js",
+				"app/wp/wp-content/themes/neverever/js/ep/scripts.js"
+			],
+			[
+				"ep.js",
+				"app/wp/wp-content/themes/neverever/ep/ep.js"
+			],
+			[
+				"functions",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"front-p",
+				"app/wp/wp-content/themes/neverever/front-page.php"
+			],
+			[
+				"bek",
+				"app/wp/wp-content/themes/neverever/single-bekannelse.php"
+			],
+			[
+				"function",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"templatetop",
+				"app/wp/wp-content/themes/neverever/template-top.php"
+			],
+			[
+				"partshea",
+				"app/wp/wp-content/themes/neverever/parts/shared/html-header.php"
+			],
+			[
+				"neverfunction",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"style.css",
+				"app/wp/wp-content/themes/neverever/style.css"
+			],
+			[
+				"wp-confi",
+				"app/wp/wp-config.php"
+			],
+			[
+				"scripts",
+				"app/wp/wp-content/themes/neverever/js/ep/scripts.js"
+			],
+			[
+				"query.php",
+				"app/wp/wp-includes/query.php"
+			],
+			[
+				"404",
+				"app/wp/wp-content/themes/neverever/404.php"
+			],
+			[
+				"wp-conf",
+				"app/wp/wp-config.php"
+			],
+			[
+				"single",
+				"app/wp/wp-content/themes/neverever/single-bekannelse.php"
+			],
+			[
+				"funtions",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"front-e",
+				"app/wp/wp-content/themes/neverever/ep/ep-simple-front-end-edit-buttons.php"
+			],
+			[
+				"partfooter",
+				"app/wp/wp-content/themes/neverever/parts/shared/footer.php"
+			],
+			[
+				"parthed",
+				"app/wp/wp-content/themes/neverever/parts/shared/header.php"
+			],
+			[
+				"partheader",
+				"app/wp/wp-content/themes/neverever/parts/shared/html-header.php"
+			],
+			[
+				"cyclejs",
+				"app/wp/wp-content/themes/neverever/js/jquery-cycle2/jquery.cycle2.core.js"
+			],
+			[
+				"cycle",
+				"app/wp/wp-content/themes/neverever/js/jquery-cycle2/cycle2.jquery.json"
+			],
+			[
+				"themfunc",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"front",
+				"app/wp/wp-content/themes/neverever/ep/ep-simple-front-end-edit-buttons.php"
+			],
+			[
+				"epfunct",
+				"app/wp/wp-content/themes/neverever/ep/ep-functions.php"
+			],
+			[
+				"header",
+				"app/wp/wp-includes/theme-compat/header.php"
+			],
+			[
+				"",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"themefunctions",
+				"app/wp/wp-content/themes/neverever/functions.php"
+			],
+			[
+				"partsheae",
+				"app/wp/wp-content/themes/neverever/parts/shared/header.php"
+			],
+			[
+				"page.php",
+				"app/wp/wp-content/themes/neverever/page.php"
+			],
+			[
+				"html-foo",
+				"app/wp/wp-content/themes/neverever/parts/shared/html-footer.php"
+			],
+			[
+				"parts",
+				"app/wp/wp-content/themes/neverever/parts/shared/header.php"
+			],
+			[
+				"htmlheader",
+				"app/wp/wp-content/themes/neverever/parts/shared/html-header.php"
+			],
+			[
+				"config",
+				"app/wp/wp-config.php"
+			],
+			[
+				"wconfig",
+				"app/wp/wp-config.php"
+			],
+			[
+				"everstyle.css",
+				"app/wp/wp-content/themes/neverever/style.css"
+			],
+			[
+				"partsfooter",
+				"app/wp/wp-content/themes/neverever/parts/shared/html-footer.php"
+			],
+			[
+				"neverindex",
+				"app/wp/wp-content/themes/neverever/index.php"
+			],
+			[
+				"partsheader",
+				"app/wp/wp-content/themes/neverever/parts/shared/header.php"
+			],
+			[
+				"extrasel",
+				"app/wp/wp-content/themes/neverever/js/jquery-extra-selectors.js"
+			],
+			[
+				"nevereverfoo",
+				"app/wp/wp-content/themes/neverever/parts/shared/footer.php"
+			],
+			[
+				"footer",
+				"app/wp/wp-includes/theme-compat/footer.php"
+			],
+			[
+				"neverstyle",
+				"app/wp/wp-content/themes/neverever/style.css"
+			],
+			[
+				"select",
+				"ep-theme/js/selectivizr.js"
+			],
+			[
+				"sharedfooter",
+				"ep-theme/parts/shared/html-footer.php"
+			],
+			[
+				"ep-f",
+				"ep-theme/ep/ep-functions.php"
+			],
+			[
+				"index",
+				"ep-theme/index.php"
+			],
+			[
+				"style",
+				"ep-theme/style.css"
+			],
+			[
+				"ep-",
+				"ep-theme/ep/ep-simple-front-end-edit-buttons.php"
+			],
+			[
+				"simple",
+				"simple_fields.php"
+			],
+			[
+				"fields.php",
+				"simple_fields.php"
+			],
+			[
+				"class_simple_fields_field.php",
+				"class_simple_fields_field.php"
+			],
+			[
+				"readm",
+				"readme.txt"
+			],
+			[
+				"js",
+				"scripts.js"
+			],
+			[
+				"simple_fields.php",
+				"simple_fields.php"
+			],
+			[
+				"_f",
+				"simple_fields.php"
+			],
+			[
+				"simple-f",
+				".idea/Simple-Fields-GIT.iml"
+			],
+			[
+				"simp",
+				"simple_fields.php"
+			],
+			[
+				"readme",
+				"readme.txt"
+			],
+			[
+				"func",
+				"functions.php"
+			],
+			[
+				"scrip",
+				"scripts.js"
+			],
+			[
+				"fun",
+				"functions.php"
+			],
+			[
+				"styl",
+				"styles.css"
+			],
+			[
+				".js",
+				"trunk/scripts.js"
+			],
+			[
+				"wpconfig",
+				"playground/wordpress/wp-config.php"
+			],
+			[
+				"re",
+				"readme.txt"
+			],
+			[
+				"st",
+				"scripts.js"
+			],
+			[
+				"in",
+				"index.php"
+			],
+			[
+				"options-permalink.php",
+				"wordpress/wp-admin/options-permalink.php"
+			],
+			[
+				"options-general.php",
+				"wordpress/wp-admin/options-general.php"
+			],
+			[
+				"scr",
+				"scripts.js"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"script",
+				"scripts.js"
+			],
+			[
+				"tut8",
+				"demofiler/tut8.py"
+			],
+			[
+				"template-",
+				"wp-content/themes/johanochnystrom/template-coworkers.php"
+			],
+			[
+				"author",
+				"wp-content/themes/johanochnystrom/author.php"
+			],
+			[
+				"johanfunc",
+				"wp-content/themes/johanochnystrom/functions.php"
+			],
+			[
+				"johanfunctions.php",
+				"wp-content/themes/johanochnystrom/functions.php"
+			],
+			[
+				"prodfilt",
+				"mockups/johanochnystrom/js/modules/product_filter.js"
+			],
+			[
+				"contentfunct",
+				"wp-content/themes/johanochnystrom/functions.php"
+			],
+			[
+				"contentfun",
+				"wp-content/themes/jnatwork/functions.php"
+			],
+			[
+				"api.json",
+				"mockups/johanochnystrom/api.json"
+			],
+			[
+				"filter.",
+				"mockups/jnatwork/filter.json"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Localhost/EarthPeople/neverever-idiotbikten.sublime-project"
+			],
+			[
+				"fiele",
+				"/Users/bonny/Dropbox/Webb/simple-fields.sublime-project"
+			],
+			[
+				"nigh",
+				"/Users/bonny/Dropbox/Localhost/EarthPeople/viacom/wp-content/plugins/WordPress-Simple-Fields-master/playground nightly.sublime-project"
+			],
+			[
+				"trib",
+				"/Users/bonny/Dropbox/ep-trib.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ep_",
+				"ep_d"
+			],
+			[
+				"",
+				"APICPictureTypeLookup"
+			]
+		],
+		"width": 763.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 330.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
