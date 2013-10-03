@@ -68,7 +68,9 @@ add_action('wp_ajax_cms_tpv_add_page', 'cms_tpv_add_page');
 add_action('wp_ajax_cms_tpv_add_pages', 'cms_tpv_add_pages');
 
 // activation
+define( "CMS_TPV_MOVE_PERMISSION", "move_cms_tree_view_page");
 register_activation_hook( WP_PLUGIN_DIR . "/cms-tree-page-view/index.php" , 'cms_tpv_install' );
+register_uninstall_hook( WP_PLUGIN_DIR . "/cms-tree-page-view/index.php" , 'cms_tpv_uninstall' );
 
 // To test activation hook, uncomment function below
 // cms_tpv_install();
