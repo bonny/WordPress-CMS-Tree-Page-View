@@ -1026,7 +1026,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 
 
 							<div>
-								<? _e("Status", "cms-tree-page-view") ?><br>
+                                                                <?php _e("Status", "cms-tree-page-view") ?><br>
 								<label><input type="radio" name="cms_tpv_add_status" value="draft" checked> <?php _e("Draft", "cms-tree-page-view") ?></label>
 								<label><input type="radio" name="cms_tpv_add_status" value="published"> <?php _e("Published", "cms-tree-page-view") ?></label>
 							</div>
@@ -1166,6 +1166,8 @@ function cms_tpv_get_pages($args = null) {
 
 	// filter out pages for wpml, by applying same filter as get_pages does
 	// only run if wpml is available or always?
+        // Note: get_pages filter uses orderby comma separated and with the key sort_column
+        $get_posts_args["sort_column"] = str_replace(" ", ", ", $get_posts_args["orderby"]);
 	$pages = apply_filters('get_pages', $pages, $get_posts_args);
 	
 	return $pages;
