@@ -220,9 +220,6 @@ function cms_tpv_add_pages() {
 
 }
 
-// for debug, remember to comment out (yes.. i *know* i will forget this later on...)
-// require("FirePHPCore/FirePHP.class.php");
-// $firephp = FirePHP::getInstance(true);
 
 /**
  * Output and add hooks in head
@@ -1177,10 +1174,6 @@ function cms_tpv_get_pages($args = null) {
 function cms_tpv_parse_query($q) {
 }
 
-function cms_tpv_firedebug($var) {
-	global $firephp;
-	$firephp->log($var);
-}
 
 /**
  * Output JSON for the children of a node
@@ -1212,12 +1205,10 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 		// Translated post statuses
 		$post_statuses = get_post_statuses();
 
-		#cms_tpv_firedebug(timer_stop());
-		
+	
 		?>[<?php
 		for ($i=0, $pagesCount = sizeof($arrPages); $i<$pagesCount; $i++) {
 	
-			#cms_tpv_firedebug(timer_stop());
 			$onePage = $arrPages[$i];
 			$tmpPost = $post;
 			$post = $onePage;

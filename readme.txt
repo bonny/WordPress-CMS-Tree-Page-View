@@ -3,8 +3,8 @@ Contributors: eskapism, MarsApril
 Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
 Requires at least: 3.5.1
-Tested up to: 3.6.1
-Stable tag: 1.2.15
+Tested up to: 3.7
+Stable tag: 1.2.17
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -109,9 +109,16 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 6. Users of WPML can find all their languages in the tree
 7. Quickly switch between regular list view and tree view using the switch icon
 
+
 == Changelog ==
 
-= 1.2.15
+= 1.2.17 =
+- Removed references to, and files for, FirePHP, since it was not used anyway.
+
+= 1.2.16 =
+- Just a version bump to make wordpress.org see my changes...
+
+= 1.2.15 =
 - Fixed a PHP shortcode.
 - Fixed arguments passed to filter get_pages.
 
