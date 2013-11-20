@@ -1672,6 +1672,7 @@ function cms_tpv_move_page() {
 	#wp_update_post(array("ID" => $post_ref_node));
 	#clean_page_cache($node_id); clean_page_cache($post_ref_node); // hmpf.. db cache reloaded don't care
 	
+	do_action("cms_tree_page_view_node_move_finish");
 	
 	exit;
 }
