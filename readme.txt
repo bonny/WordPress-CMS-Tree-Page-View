@@ -2,9 +2,9 @@
 Contributors: eskapism, MarsApril
 Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
-Requires at least: 3.5.1
-Tested up to: 3.7
-Stable tag: 1.2.19
+Requires at least: 3.8
+Tested up to: 3.8.1
+Stable tag: 1.2.21
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -112,6 +112,12 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 
 == Changelog ==
+
+= 1.2.21 =
+- Fixed and incompatibility issue with plugin Advanced Custom Fields.
+
+= 1.2.20 =
+- Removed part of a comment beacuse it mentionened a file on another domain and therefore violated the repository guidelines. Also moved some sprites in CSS from loading external to loading internal.
 
 = 1.2.19 =
 - Added action "cms_tree_page_view_node_move_finish" that is called after a page is moved with drag and drop. Useful to for example clear caches.
