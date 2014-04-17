@@ -4,7 +4,7 @@ Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.2.22
+Stable tag: 1.2.23
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -112,6 +112,9 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 
 == Changelog ==
+
+= 1.2.23 =
+- Now only users with permission may move pages and custom posts and publish new posts. By default administrator and editors have these rights. Is checked using capability "move_cms_tree_view_page", so add that to any user you want to allow this for. Props mateuszdw, who made [the very first pull request for this plugin](https://github.com/bonny/WordPress-CMS-Tree-Page-View/pull/1)! Thanks a lot!
 
 = 1.2.22 =
 - Fixed top links being squashed in dashboard. Fixes http://wordpress.org/support/topic/bug-top-links-on-dashboard-widget-misaligned-in-wp-38. Props tim.wakeling.
