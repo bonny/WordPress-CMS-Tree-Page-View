@@ -901,12 +901,14 @@ jQuery(function($) {
 		var view_switch_list = $("#view-switch-list"),
 			view_switch_list_a = view_switch_list.closest("a");
 
-		view_switch.append(view_switch_list_a);
-		view_switch.append(" ");
+		//view_switch.append(view_switch_list_a);
+		//view_switch.append(" ");
 
 	}
 	
 	// Add our link inside view switch
+
+	/*
 	view_switch.append(tree_view_switch_a);
 	view_switch.addClass("view-switch-cstpv-icon-added");
 	
@@ -921,5 +923,6 @@ jQuery(function($) {
 		viewswitch.appendTo(cmstpv_postsoverview_wrap);
 
 	}
+	*/
 
 });

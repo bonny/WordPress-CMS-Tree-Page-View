@@ -12,7 +12,7 @@ Don't use this anymore since it's against the repository guidelines
 
 .cms_tpv_wrapper {
 	z-index: 10;
-	margin-right: 250px;
+	/*margin-right: 250px;*/
 }
 
 .postbox .cms_tpv_wrapper {
@@ -465,6 +465,12 @@ ul.cms_tpv_action_add_doit_pages {
 
 .cms_tpv_action_add_doit_pages li:last-child span:first-child {
 	visibility: hidden;
+}
+
+/* prevent long titles from overflowing the dashboard widget area */
+.cms_tpv_container.jstree a {
+	max-width: 90%;
+	overflow: hidden;
 }
 
 /*

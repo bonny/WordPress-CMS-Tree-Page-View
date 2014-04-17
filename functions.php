@@ -1715,7 +1715,7 @@ function cms_tpv_move_page() {
  */
 function cms_tpv_show_annoying_box() {
 	
-	// update_option('cms_tpv_show_annoying_little_box', 1); // enable this to show box while testing
+	//update_option('cms_tpv_show_annoying_little_box', 1); // enable this to show box while testing
 
 	if ( isset($_GET["action"]) && "cms_tpv_remove_annoying_box" == $_GET["action"] ) {
 		$show_box = 0;
@@ -1723,6 +1723,7 @@ function cms_tpv_show_annoying_box() {
 	} else {
 		$show_box = get_option('cms_tpv_show_annoying_little_box', 1);
 	}
+
 	if ($show_box) {
 		?>
 		<div class="cms_tpv_annoying_little_box">
