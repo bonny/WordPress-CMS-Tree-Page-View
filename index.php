@@ -27,7 +27,7 @@ License: GPL2
 
 #require("functions.php");
 
-define( "CMS_TPV_VERSION", "1.2.23");
+define( "CMS_TPV_VERSION", "1.2.24");
 define( "CMS_TPV_NAME", "CMS Tree Page View");
 
 require(dirname(__FILE__) . "/functions.php");
@@ -75,8 +75,8 @@ register_uninstall_hook( WP_PLUGIN_DIR . "/cms-tree-page-view/index.php" , 'cms_
 // To test activation hook, uncomment function below
 // cms_tpv_install();
 
-// catch upgrade
-add_action('plugins_loaded', 'cms_tpv_plugins_loaded' , 1);
+// catch upgrade. moved from plugins_loaded to init to be able to use wp_roles
+add_action('init', 'cms_tpv_plugins_loaded' , 1);
 
 // hook onto query
 #add_action( 'parse_query', 'cms_tpv_parse_query' );

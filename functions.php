@@ -1785,6 +1785,10 @@ function cms_tpv_install() {
 	// set to current version
 	update_option('cms_tpv_version', CMS_TPV_VERSION);
 
+}
+
+function cms_tvp_setup_caps() {
+
 	// Add necessary capabilities to allow moving tree of cms_tpv
 	$roles = array(
 		'administrator' => array(CMS_TPV_MOVE_PERMISSION),
@@ -1800,15 +1804,17 @@ function cms_tpv_install() {
 }
 
 function cms_tpv_uninstall() {
-		// Remove capabilities to disallow moving tree of cms_tpv
-		$roles = array(
-				'administrator' => array(CMS_TPV_MOVE_PERMISSION),
-				'editor' =>        array(CMS_TPV_MOVE_PERMISSION)
-		);
 
-		foreach ( $roles as $role => $caps ) {
-				remove_caps_from_role( $role, $caps );
-		}
+	// Remove capabilities to disallow moving tree of cms_tpv
+	$roles = array(
+			'administrator' => array(CMS_TPV_MOVE_PERMISSION),
+			'editor' =>        array(CMS_TPV_MOVE_PERMISSION)
+	);
+
+	foreach ( $roles as $role => $caps ) {
+			remove_caps_from_role( $role, $caps );
+	}
+
 }
 
 /**
@@ -1883,14 +1889,23 @@ function cms_tpv_setup_defaults() {
  * if not = it's an upgrade. right?
  */
 function cms_tpv_plugins_loaded($a) {
+
 	$installed_version = get_option('cms_tpv_version', 0);
-	#echo "installed_version: $installed_version";
-	#echo "<br>" . CMS_TPV_VERSION;
+	
+	//echo "installed_version in options table: $installed_version";
+	//echo "<br>version according to this file" . CMS_TPV_VERSION;
+
 	if ($installed_version != CMS_TPV_VERSION) {
+		
 		// new version!
-		// upgrade stored version to current version + show that annoying litte box again
+		// upgrade stored version to current version
 		update_option('cms_tpv_version', CMS_TPV_VERSION);	
+
+		// show that annoying litte box again
 		update_option('cms_tpv_show_annoying_little_box', 1);
+
+		// setup caps/persmissions
+		cms_tvp_setup_caps();
 	}
 
 }
