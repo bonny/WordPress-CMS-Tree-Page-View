@@ -199,7 +199,8 @@ jQuery(function($) {
 	});
 
 	treeOptions = {
-		plugins: ["themes","json_data","cookies","search",CMS_TPV_CAN_DND, "types"],
+		//plugins: ["themes","json_data","cookies","search",CMS_TPV_CAN_DND, "types"],
+		plugins: ["themes","json_data","cookies","search","dnd", "types"],
 		core: {
 			"html_titles": true
 		},
