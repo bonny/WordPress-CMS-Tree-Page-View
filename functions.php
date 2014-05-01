@@ -1288,6 +1288,9 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			}
 			
 			$title = get_the_title($onePage->ID); // so hooks and stuff will do their work
+
+			$title = apply_filters("cms_tree_page_view_post_title", $title, $onePage);
+
 			if (empty($title)) {
 				$title = __("<Untitled page>", 'cms-tree-page-view');
 			}

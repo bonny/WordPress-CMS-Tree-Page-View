@@ -4,7 +4,7 @@ Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.2.26
+Stable tag: 1.2.27
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -112,6 +112,10 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 
 == Changelog ==
+
+= 1.2.27 =
+
+- Add new filter "cms_tree_page_view_post_title". Use this filter to change to title being used to build the tree.
 
 = 1.2.26 =
 - Roll back the feature with permissions to move pages. Too many people had problems with it.
