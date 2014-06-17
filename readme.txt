@@ -4,7 +4,7 @@ Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.2.27
+Stable tag: 1.2.28
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -83,6 +83,7 @@ This plugin is available in the following languages:
 * Estonian
 * Finnish
 * Japanese
+* Ukrainian, by [getvoip.com](http://getvoip.com)
 
 #### Always show your pages in the admin area
 If you want to always have a list of your pages available in your WordPress admin area, please check out the plugin
@@ -113,49 +114,66 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
+= 1.2.28 =
+
+- Added Ukranian translation by [getvoip.com](http://getvoip.com).
+
 = 1.2.27 =
 
 - Add new filter "cms_tree_page_view_post_title". Use this filter to change to title being used to build the tree.
 
 = 1.2.26 =
+
 - Roll back the feature with permissions to move pages. Too many people had problems with it.
 
 = 1.2.25 =
+
 - Just a version bump because wordpress.org did not show version 1.2.24.
 
 = 1.2.24 =
+
 - Fix problems with users not getting permissions to move pages.
 
 = 1.2.23 =
+
 - Now only users with permission may move pages and custom posts and publish new posts. By default administrator and editors have these rights. Is checked using capability "move_cms_tree_view_page", so add that to any user you want to allow this for. Props mateuszdw, who made [the very first pull request for this plugin](https://github.com/bonny/WordPress-CMS-Tree-Page-View/pull/1)! Thanks a lot!
 
 = 1.2.22 =
+
 - Fixed top links being squashed in dashboard. Fixes http://wordpress.org/support/topic/bug-top-links-on-dashboard-widget-misaligned-in-wp-38. Props tim.wakeling.
 - Fixed: Now prevents long titles from overflowing the dashboard widget area. Prop tim.wakeling.
 
 = 1.2.21 =
+
 - Fixed incompatibility issue with plugin Advanced Custom Fields.
 
 = 1.2.20 =
+
 - Removed part of a comment beacuse it mentionened a file on another domain and therefore violated the repository guidelines. Also moved some sprites in CSS from loading external to loading internal.
 
 = 1.2.19 =
+
 - Added action "cms_tree_page_view_node_move_finish" that is called after a page is moved with drag and drop. Useful to for example clear caches.
 
 = 1.2.18 =
+
 - Added Japanese translation
 
 = 1.2.17 =
+
 - Removed references to, and files for, FirePHP, since it was not used anyway.
 
 = 1.2.16 =
+
 - Just a version bump to make wordpress.org see my changes...
 
 = 1.2.15 =
+
 - Fixed a PHP shortcode.
 - Fixed arguments passed to filter get_pages.
 
 = 1.2.14 =
+
 - Now the tree view is enabled by default for hiearchical post types. Should make it easier for new users to get started.
 - Removed some annoying calls to console.log().
 - Fixed bulk edit and quick edit not working for posts. Fixes http://wordpress.org/support/topic/breaks-bulk-edit-feature.
@@ -164,6 +182,7 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 - Updated norwegian translation.
 
 = 1.2.13 =
+
 - Added Serbo-Croatian translation by Andrijana Nikolic from [webhostinggeeks](http://webhostinggeeks.com/)
 
 = 1.2.12 =
