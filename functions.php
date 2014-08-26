@@ -261,7 +261,7 @@ function cms_tpv_admin_head() {
 	?>
 	<script type="text/javascript">
 		/* <![CDATA[ */
-		var CMS_TPV_URL = "<?php echo CMS_TPV_URL ?>";
+		var CMS_TPV_URL = "<?php echo plugins_url('/', __FILE__) ?>";
 		var CMS_TPV_AJAXURL = "?action=cms_tpv_get_childs&view=";
 		var CMS_TPV_VIEW = "<?php echo $cms_tpv_view ?>";
 		//var CMS_TPV_CAN_DND = "<?php echo current_user_can( CMS_TPV_MOVE_PERMISSION ) ? "dnd" : "" ?>";
@@ -328,15 +328,15 @@ function cms_admin_enqueue_scripts() {
 	if (cms_tpv_is_one_of_our_pages()) {
 
 		// renamed from cookie to fix problems with mod_security
-		wp_enqueue_script( "jquery-cookie", CMS_TPV_URL . "scripts/jquery.biscuit.js", array("jquery"));
+		wp_enqueue_script( "jquery-cookie", plugins_url("/scripts/jquery.biscuit.js", __FILE__), array("jquery"));
 		wp_enqueue_script( "jquery-ui-sortable");
-		wp_enqueue_script( "jquery-jstree", CMS_TPV_URL . "scripts/jquery.jstree.js", false, CMS_TPV_VERSION);
-		wp_enqueue_script( "jquery-alerts", CMS_TPV_URL . "scripts/jquery.alerts.js", false, CMS_TPV_VERSION);
+		wp_enqueue_script( "jquery-jstree", plugins_url("/scripts/jquery.jstree.js", __FILE__), false, CMS_TPV_VERSION);
+		wp_enqueue_script( "jquery-alerts", plugins_url("/scripts/jquery.alerts.js", __FILE__), false, CMS_TPV_VERSION);
 		// wp_enqueue_script( "hoverIntent");
-		wp_enqueue_script( "cms_tree_page_view", CMS_TPV_URL . "scripts/cms_tree_page_view.js", false, CMS_TPV_VERSION);	
+		wp_enqueue_script( "cms_tree_page_view", plugins_url("/scripts/cms_tree_page_view.js", __FILE__), false, CMS_TPV_VERSION);
 
-		wp_enqueue_style( "cms_tpv_styles", CMS_TPV_URL . "styles/styles.css", false, CMS_TPV_VERSION );
-		wp_enqueue_style( "jquery-alerts", CMS_TPV_URL . "styles/jquery.alerts.css", false, CMS_TPV_VERSION );
+		wp_enqueue_style( "cms_tpv_styles", plugins_url("/styles/styles.css", __FILE__), false, CMS_TPV_VERSION );
+		wp_enqueue_style( "jquery-alerts", plugins_url("/styles/jquery.alerts.css", __FILE__), false, CMS_TPV_VERSION );
 
 		$oLocale = array(
 			"Enter_title_of_new_page" => __("Enter title of new page", 'cms-tree-page-view'),
@@ -1367,8 +1367,7 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 					"attr": {
 						"href": "<?php echo $editLink ?>"
 						<?php /* , "xid": "cms-tpv-<?php echo $onePage->ID ?>" */ ?>
-					}<?php /*,
-					"xicon": "<?php echo CMS_TPV_URL . "images/page_white_text.png" ?>"*/?>
+					}
 				},
 				"attr": {
 					<?php /* "xhref": "<?php echo $editLink ?>", */ ?>
