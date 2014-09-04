@@ -603,7 +603,9 @@ function cms_tpv_admin_menu() {
 		}
 	}
 
-	add_submenu_page( 'options-general.php' , CMS_TPV_NAME, CMS_TPV_NAME, "administrator", "cms-tpv-options", "cms_tpv_options");
+	$page_title = apply_filters("cms_tree_page_view_options_page_title", CMS_TPV_NAME);
+	$menu_title = apply_filters("cms_tree_page_view_options_menu_title", CMS_TPV_NAME);
+	add_submenu_page( 'options-general.php', $page_title, $menu_title, "administrator", "cms-tpv-options", "cms_tpv_options");
 	
 }
 
