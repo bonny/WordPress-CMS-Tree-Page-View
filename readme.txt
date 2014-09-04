@@ -84,6 +84,7 @@ This plugin is available in the following languages:
 * Finnish
 * Japanese
 * Ukrainian, by [getvoip.com](http://getvoip.com)
+* Slovak
 
 #### Always show your pages in the admin area
 If you want to always have a list of your pages available in your WordPress admin area, please check out the plugin
