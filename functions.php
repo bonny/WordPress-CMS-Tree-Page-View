@@ -1752,7 +1752,7 @@ function cms_tpv_show_annoying_box() {
 			</ul>
 
 			<h3><?php _e('Support', 'cms-tree-page-view') ?></h3>
-			<p><?php printf(__('Plese see the <a href="%1$s">support forum</a> for help.', 'cms-tree-page-view'), "http://wordpress.org/support/plugin/cms-tree-page-view") ?></p>
+			<p><?php printf(__('Please see the <a href="%1$s">support forum</a> for help.', 'cms-tree-page-view'), "http://wordpress.org/support/plugin/cms-tree-page-view") ?></p>
 
 			<p class="cms_tpv_annoying_little_box_close">
 				<a href="<?php echo add_query_arg("action", "cms_tpv_remove_annoying_box")?>">
