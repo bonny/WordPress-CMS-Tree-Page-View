@@ -1,26 +1,72 @@
-# Translation of the WordPress plugin CMS Tree Page View.
-# Copyright (C) 2010
-# This file is distributed under the same license as the  package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: CMS Tree Page View\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/cms-tree-page-view\n"
 "POT-Creation-Date: 2013-04-16 16:52+0100\n"
-"PO-Revision-Date: 2013-04-16 17:00+0100\n"
-"Last-Translator: Martin Lettner <m.lettner@gmail.com>\n"
+"PO-Revision-Date: Mon Sep 08 2014 08:50:23 GMT+0200\n"
+"Last-Translator: Arno Welzel <privat@arnowelzel.de>\n"
 "Language-Team: \n"
+"Language: German\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Loco-Target-Locale: de_DE"
 
 #: ../cms-tree-page-view/functions.php:66
 #: ../cms-tree-page-view/functions.php:113
 #: ../cms-tree-page-view/functions.php:1396
 msgid "Cheatin&#8217; uh?"
+msgstr "Betrügen, huh?"
+
+#: ../cms-tree-page-view/functions.php:1694
+msgid ""
+"Hi there! I just wanna says thanks for using my plugin. I hope you like it "
+"as much as I do."
 msgstr ""
+"Hallo auch! I möchte nur Danke sagen für die Verwendung meines Plugins. Ich "
+"hoffe Sie mögen es genauso wie ich."
+
+#: ../cms-tree-page-view/functions.php:1698
+msgid "There are serveral ways for you to show your appreciation:"
+msgstr "Es gibt verschiedene Wege, mir Ihre Anerkennung zu zeigen:"
+
+#: ../cms-tree-page-view/functions.php:1700
+#, php-format
+msgid ""
+"<a href=\"%1$s\">Give it a nice review</a> over at the WordPress Plugin "
+"Directory"
+msgstr ""
+"<a href=\"%1$s\">Schreiben Sie eine positive Bewertung</a> im Plugin-"
+"Verzeichnis von WordPress"
+
+#: ../cms-tree-page-view/functions.php:1701
+#, php-format
+msgid "<a href=\"%1$s\">Give a donation</a> – any amount will make me happy"
+msgstr "<a href=\"%1$s\">Spenden Sie</a> – jeder Betrag macht mich glücklich"
+
+#: ../cms-tree-page-view/functions.php:1702
+#, php-format
+msgid ""
+"<a href=\"%1$s\">Post a nice tweet</a> or make a nice blog post about the "
+"plugin"
+msgstr ""
+"<a href=\"%1$s\">Schreiben Sie einen netten Tweet</a> oder einen netten Blog-"
+"Beitrag über das Plugin"
+
+#: ../cms-tree-page-view/functions.php:1706
+#, php-format
+msgid "Plese see the <a href=\"%1$s\">support forum</a> for help."
+msgstr "Bitte besuchen Sie das <a href=\"%1$s\">Support-Forum</a> für Hilfe."
 
 #: ../cms-tree-page-view/functions.php:321
 msgid "Enter title of new page"
@@ -173,8 +219,7 @@ msgstr "Einstellungen"
 
 #: ../cms-tree-page-view/functions.php:598
 msgid "Select where to show a tree for pages and custom post types"
-msgstr ""
-"Auswählen wo eine Baumansicht für Seiten und Artikel angezeigt werden soll:"
+msgstr "Auswählen wo eine Baumansicht für Seiten und Artikel angezeigt werden soll:"
 
 #: ../cms-tree-page-view/functions.php:642
 msgid "On dashboard"
@@ -350,12 +395,6 @@ msgstr "Neue Seite"
 msgid "Thanks for using my plugin"
 msgstr "Danke, dass Sie dieses Plugin verwenden"
 
-#: ../cms-tree-page-view/functions.php:1694
-msgid ""
-"Hi there! I just wanna says thanks for using my plugin. I hope you like it "
-"as much as I do."
-msgstr ""
-
 #: ../cms-tree-page-view/functions.php:1695
 msgid "/Pär Thernström - plugin creator"
 msgstr "/Pär Thernström - Plugin-Autor"
@@ -364,84 +403,10 @@ msgstr "/Pär Thernström - Plugin-Autor"
 msgid "I like this plugin<br>– how can I thank you?"
 msgstr "Mir gefällt dieses Plugin<br>Wie kann ich helfen?"
 
-#: ../cms-tree-page-view/functions.php:1698
-msgid "There are serveral ways for you to show your appreciation:"
-msgstr ""
-
-#: ../cms-tree-page-view/functions.php:1700
-#, php-format
-msgid ""
-"<a href=\"%1$s\">Give it a nice review</a> over at the WordPress Plugin "
-"Directory"
-msgstr ""
-
-#: ../cms-tree-page-view/functions.php:1701
-#, php-format
-msgid "<a href=\"%1$s\">Give a donation</a> – any amount will make me happy"
-msgstr ""
-
-#: ../cms-tree-page-view/functions.php:1702
-#, php-format
-msgid ""
-"<a href=\"%1$s\">Post a nice tweet</a> or make a nice blog post about the "
-"plugin"
-msgstr ""
-
 #: ../cms-tree-page-view/functions.php:1705
 msgid "Support"
 msgstr "Hilfe/Support"
 
-#: ../cms-tree-page-view/functions.php:1706
-#, php-format
-msgid "Plese see the <a href=\"%1$s\">support forum</a> for help."
-msgstr ""
-
 #: ../cms-tree-page-view/functions.php:1710
 msgid "Hide until next upgrade"
 msgstr "Bis zum nächsten Update verstecken"
-
-#~ msgid "Click to edit. Drag to move."
-#~ msgstr "Zum Editieren klicken. Zum Bewegen ziehen."
-
-#~ msgid "Close"
-#~ msgstr "Schließen"
-
-#~ msgid ""
-#~ "<strong>Thank you for using this plugin!</strong> If you need help please "
-#~ "check out the <a href=\"http://eskapism.se/code-playground/cms-tree-page-"
-#~ "view/?utm_source=wordpress&utm_medium=banner&utm_campaign=promobox"
-#~ "\">plugin homepage</a> or the <a href=\"http://wordpress.org/tags/cms-"
-#~ "tree-page-view?forum_id=10\">support forum</a>."
-#~ msgstr ""
-#~ "<strong>Vielen Dank, dass Sie dieses Plugin verwenden!</strong> Falls Sie "
-#~ "Hilfe benötigen schauen Sie auf der <a href=\"http://eskapism.se/code-"
-#~ "playground/cms-tree-page-view/?"
-#~ "utm_source=wordpress&utm_medium=banner&utm_campaign=promobox\">Plugin-"
-#~ "Homepage [en]</a> oder im <a href=\"http://wordpress.org/tags/cms-tree-"
-#~ "page-view?forum_id=10\">Support-Forum [en]</a> nach."
-
-#~ msgid ""
-#~ "If you like this plugin, please <a href=\"http://eskapism.se/sida/donate/?"
-#~ "utm_source=wordpress&utm_medium=banner&utm_campaign=promobox\">support my "
-#~ "work by donating</a> - or at least say something nice about this plugin "
-#~ "in a blog post or tweet."
-#~ msgstr ""
-#~ "Falls Sie dieses Plugin nützlich finden, bitte <a href=\"http://eskapism."
-#~ "se/sida/donate/?"
-#~ "utm_source=wordpress&utm_medium=banner&utm_campaign=promobox"
-#~ "\">unterstützen Sie meine Arbeit mit einer Spende</a> - oder hinterlassen "
-#~ "Sie eine freundliche Nachricht über das Plugin in einer Blog- oder "
-#~ "Twitter-Nachricht."
-
-#~ msgid "Show tree"
-#~ msgstr "Zeige Baum"
-
-#~ msgid "under the pages menu"
-#~ msgstr "im Menüpunkt unter 'Seiten'"
-
-#~ msgid ""
-#~ "No pages found. Maybe you want to <a href='post-new.php?"
-#~ "post_type=page'>add a new page</a>?"
-#~ msgstr ""
-#~ "Keine Seiten gefunden. Jetzt eine neue Seite <a href='post-new.php?"
-#~ "post_type=page'>anlegen</a>?"
