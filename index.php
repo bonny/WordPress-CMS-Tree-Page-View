@@ -32,23 +32,6 @@ define( "CMS_TPV_NAME", "CMS Tree Page View");
 
 require(dirname(__FILE__) . "/functions.php");
 
-// Find the plugin directory URL
-$aa = __FILE__;
-if ( isset( $mu_plugin ) ) {
-	$aa = $mu_plugin;
-}
-if ( isset( $network_plugin ) ) {
-	$aa = $network_plugin;
-}
-if ( isset( $plugin ) ) {
-	$aa = $plugin;
-}
-$plugin_dir_url = plugin_dir_url(basename($aa)) . 'cms-tree-page-view/';
-
-// There! Now we should have it.
-define( "CMS_TPV_URL", $plugin_dir_url);
-// define( "CMS_TPV_PLUGIN_FOLDERNAME_AND_FILENAME", basename(dirname(__FILE__)) . "/" . basename(__FILE__) );
-
 add_action( 'init', 'cms_tpv_load_textdomain' );
 
 // on admin init: add styles and scripts
