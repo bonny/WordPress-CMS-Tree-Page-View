@@ -6,7 +6,7 @@
  */
 /*
 add_action("cms_tree_page_view_post_can_edit", function($can_edit, $post_id) {
-	
+
 	if ($post_id === 163) $can_edit = FALSE;
 
 	return $can_edit;
@@ -15,7 +15,7 @@ add_action("cms_tree_page_view_post_can_edit", function($can_edit, $post_id) {
 
 
 add_action("cms_tree_page_view_post_user_can_add_inside", function($can_edit, $post_id) {
-	
+
 	if ($post_id === 233) $can_edit = FALSE;
 
 	return $can_edit;
@@ -23,7 +23,7 @@ add_action("cms_tree_page_view_post_user_can_add_inside", function($can_edit, $p
 }, 10, 2);
 
 add_action("cms_tree_page_view_post_user_can_add_after", function($can_edit, $post_id) {
-	
+
 	if ($post_id === 142) $can_edit = FALSE;
 
 	return $can_edit;
@@ -35,9 +35,9 @@ add_action("cms_tree_page_view_post_user_can_add_after", function($can_edit, $po
  * Check if a post type is ignored
  */
 function cms_tpv_post_type_is_ignored($post_type) {
-	
+
 	$ignored_post_types = cms_tpv_get_ignored_post_types();
-	
+
 	return in_array($post_type, $ignored_post_types);
 
 }
@@ -54,12 +54,35 @@ function cms_tpv_get_ignored_post_types() {
 }
 
 /**
+ * Fix problem with WordPress insert_post_data. In update case
+ * WordPress use current timestamp and logged in user. In this case
+ * keep these originals from post to be updated:
+ *
+ * post_author, post_modified and post_modified_gmt
+ *
+ * Heikki Paananen, Kehitysvammaliitto ry (2015-01-09)
+ */
+function cms_tpv_insert_post_data($data, $postarr) {
+
+  if ( ! empty( $postarr['ID'] ) ) {
+    $data['post_author'] = $postarr['post_author'];
+    $data['post_modified'] = $postarr['post_modified'];
+    $data['post_modified_gmt'] = $postarr['post_modified_gmt'];
+  }
+
+  return $data;
+}
+
+/**
  * Use the ajax action-thingie to catch our form with new pages
  * Add pages and then redirect to...?
  */
 function cms_tpv_add_pages() {
 
-	#sf_d($_POST);exit;
+  //--- Added 2015-01-09 ---
+  add_filter('wp_insert_post_data', 'cms_tpv_insert_post_data', '99', 2);
+
+  #sf_d($_POST);exit;
 	/*
 	Array
 	(
@@ -68,7 +91,7 @@ function cms_tpv_add_pages() {
 			(
 				[0] => xxxxx
 				[1] => yyyy
-				[2] => 
+				[2] =>
 			)
 
 		[cms_tpv_add_type] => inside
@@ -107,25 +130,25 @@ function cms_tpv_add_pages() {
 	}
 
 	$arr_post_names_count = sizeof($arr_post_names);
-	
+
 	// check that there are pages left
 	if (empty($arr_post_names)) die("Error: no pages to add.");
 
 	$ref_post = get_post($ref_post_id);
 	if (NULL === $ref_post) die("Error: could not load reference post.");
-	
+
 	// Make room for our new pages
 	// Get all pages at a level level and loop until our reference page
-	// and then all pages after that one will get it's menu_order 
+	// and then all pages after that one will get it's menu_order
 	// increased by the same number as the number of new posts we're gonna add
-	
+
 	$ok_to_continue_by_permission = TRUE;
 	$post_type_object = get_post_type_object($ref_post->post_type);
 
 	$post_parent = 0;
 	if ("after" === $post_position) {
 		$post_parent = $ref_post->post_parent;
-		$ok_to_continue_by_permission = apply_filters("cms_tree_page_view_post_user_can_add_after", current_user_can( $post_type_object->cap->create_posts, $ref_post_id), $ref_post_id);	
+		$ok_to_continue_by_permission = apply_filters("cms_tree_page_view_post_user_can_add_after", current_user_can( $post_type_object->cap->create_posts, $ref_post_id), $ref_post_id);
 	} elseif ("inside" === $post_position) {
 		$post_parent = $ref_post->ID;
 		$ok_to_continue_by_permission = apply_filters("cms_tree_page_view_post_user_can_add_inside", current_user_can( $post_type_object->cap->create_posts, $ref_post_id), $ref_post_id);
@@ -165,27 +188,30 @@ function cms_tpv_add_pages() {
 	if (sizeof($posts) > 0)  {
 
 		if ("after" === $post_position) {
-		
+
 			$has_passed_ref_post = FALSE;
 			foreach ($posts as $one_post) {
-				
+
 				if ($has_passed_ref_post) {
-					
+
 					$post_update = array(
-						"ID" => $one_post->ID,
-						"menu_order" => $one_post->menu_order + $arr_post_names_count
-					);
-					$return_id = wp_update_post($post_update);
+            "ID" => $one_post->ID,
+            "menu_order" => $one_post->menu_order + $arr_post_names_count,
+            "post_author" => $one_post->post_author,
+            "post_modified" => $one_post->post_modified,          //--- Added 2015-01-09 ---
+            "post_modified_gmt" => $one_post->post_modified_gmt,  //--- Added 2015-01-09 ---
+          );
+          $return_id = wp_update_post($post_update);
 					if (0 ===$return_id) die( "Error: could not update post with id " . $post_update->ID . "<br>Technical details: " . print_r($post_update) );
 
 				}
 
 				if ( ! $has_passed_ref_post && $ref_post->ID === $one_post->ID ) {
 					$has_passed_ref_post = TRUE;
-				}			
+				}
 
 			}
-			
+
 			$new_menu_order = $ref_post->menu_order;
 
 		}  elseif ("inside" === $post_position) {
@@ -193,7 +219,7 @@ function cms_tpv_add_pages() {
 			// in inside, place at beginning
 			// so just get first post and use that menu order as base
 			$new_menu_order = $posts[0]->menu_order - $arr_post_names_count;
-			
+
 		}
 
 
@@ -217,13 +243,13 @@ function cms_tpv_add_pages() {
 
 		$new_menu_order++;
 		$newpost_args = array(
-			"menu_order" => $new_menu_order,
-			"post_parent" => $post_parent_id,
-			"post_status" => ( ('publish' == $post_status) && !current_user_can('publish_posts') ? 'pending' : $post_status ),
-			"post_title" => $one_new_post_name,
-			"post_type" => $ref_post->post_type
-		);
-		$new_post_id = wp_insert_post($newpost_args);
+      "menu_order" => $new_menu_order,
+      "post_parent" => $post_parent_id,
+      "post_status" => ( ('publish' == $post_status) && !current_user_can('publish_posts') ? 'pending' : $post_status ),
+      "post_title" => $one_new_post_name,
+      "post_type" => $ref_post->post_type,
+    );
+    $new_post_id = wp_insert_post($newpost_args);
 
 		if (0 === $new_post_id) {
 			die("Error: could not add post");
@@ -249,7 +275,7 @@ function cms_tpv_add_pages() {
 function cms_tpv_admin_head() {
 
 	if (!cms_tpv_is_one_of_our_pages()) return;
-	
+
 	cms_tpv_setup_postsoverview();
 
 	global $cms_tpv_view;
@@ -291,7 +317,7 @@ function cms_tpv_is_one_of_our_pages() {
 	$post_type = cms_tpv_get_selected_post_type();
 
 	if (! function_exists("get_current_screen")) return FALSE;
-	
+
 	$current_screen = get_current_screen();
 	$is_plugin_page = FALSE;
 
@@ -333,7 +359,7 @@ function cms_admin_enqueue_scripts() {
 		wp_enqueue_script( "jquery-jstree", CMS_TPV_URL . "scripts/jquery.jstree.js", false, CMS_TPV_VERSION);
 		wp_enqueue_script( "jquery-alerts", CMS_TPV_URL . "scripts/jquery.alerts.js", false, CMS_TPV_VERSION);
 		// wp_enqueue_script( "hoverIntent");
-		wp_enqueue_script( "cms_tree_page_view", CMS_TPV_URL . "scripts/cms_tree_page_view.js", false, CMS_TPV_VERSION);	
+		wp_enqueue_script( "cms_tree_page_view", CMS_TPV_URL . "scripts/cms_tree_page_view.js", false, CMS_TPV_VERSION);
 
 		wp_enqueue_style( "cms_tpv_styles", CMS_TPV_URL . "styles/styles.css", false, CMS_TPV_VERSION );
 		wp_enqueue_style( "jquery-alerts", CMS_TPV_URL . "styles/jquery.alerts.css", false, CMS_TPV_VERSION );
@@ -384,7 +410,7 @@ function cms_tpv_load_textdomain() {
 }
 
 function cms_tpv_admin_init() {
-	
+
 	// DEBUG
 	//wp_enqueue_script( "jquery-hotkeys" );
 
@@ -407,14 +433,14 @@ function cms_tpv_setup_postsoverview() {
 	$current_screen = get_current_screen();
 
 	if ("edit" === $current_screen->base && in_array($current_screen->post_type, $options["postsoverview"])) {
-		
+
 		// Ok, this is a post overview page that we are enabled for
 		add_filter("views_" . $current_screen->id, "cmstpv_filter_views_edit_postsoverview");
 
 		cmstpv_postoverview_head();
 
 	}
-	
+
 }
 
 /**
@@ -452,7 +478,7 @@ function cmstpv_postoverview_head() {
 function cmstpv_filter_views_edit_postsoverview($filter_var) {
 
 	$current_screen = get_current_screen();
-	
+
 	ob_start();
 	cms_tpv_print_common_tree_stuff();
 	$tree_common_stuff = ob_get_clean();
@@ -488,13 +514,13 @@ function cmstpv_filter_views_edit_postsoverview($filter_var) {
 
 	// Output tree related stuff if that view/mode is selected
 	if (isset($_GET["mode"]) && $_GET["mode"] === "tree") {
-	
+
 		$out .= sprintf('
 			<div class="cmstpv-postsoverview-wrap">
 				%1$s
 			</div>
 		', $tree_common_stuff);
-	
+
 	}
 
 	echo $out;
@@ -525,7 +551,7 @@ function cms_tpv_set_plugin_row_meta($links, $file) {
  * Save settings, called when saving settings in general > cms tree page view
  */
 function cms_tpv_save_settings() {
-	
+
 	if (isset($_POST["cms_tpv_action"]) && $_POST["cms_tpv_action"] == "save_settings" && check_admin_referer('update-options')) {
 
 		$options = array();
@@ -543,7 +569,7 @@ function cms_tpv_save_settings() {
  * Add widget to dashboard
  */
 function cms_tpv_wp_dashboard_setup() {
-	
+
 	// echo "setup dashboard";
 
 	// add dashboard to capability edit_pages only
@@ -573,11 +599,11 @@ function cms_tpv_dashboard($post_type = "") {
 // Add items to the wp admin menu
 function cms_tpv_admin_menu() {
 
-	// add 
+	// add
 	$options = cms_tpv_get_options();
 
 	foreach ($options["menu"] as $one_menu_post_type) {
-		
+
 		if ( cms_tpv_post_type_is_ignored($one_menu_post_type) ) {
 			continue;
 		}
@@ -588,7 +614,7 @@ function cms_tpv_admin_menu() {
 		} else {
 			$slug = "edit.php?post_type=$one_menu_post_type";
 		}
-		
+
 		$post_type_object = get_post_type_object($one_menu_post_type);
 
 		// Only try to add menu if we got a valid post type object
@@ -606,7 +632,7 @@ function cms_tpv_admin_menu() {
 	$page_title = apply_filters("cms_tree_page_view_options_page_title", CMS_TPV_NAME);
 	$menu_title = apply_filters("cms_tree_page_view_options_menu_title", CMS_TPV_NAME);
 	add_submenu_page( 'options-general.php', $page_title, $menu_title, "administrator", "cms-tpv-options", "cms_tpv_options");
-	
+
 }
 
 /**
@@ -616,31 +642,31 @@ function cms_tpv_options() {
 
 	?>
 	<div class="wrap">
-	
+
 		<?php cms_tpv_show_annoying_box(); ?>
-	
-		<?php screen_icon(); ?>	
+
+		<?php screen_icon(); ?>
 		<h2><?php echo CMS_TPV_NAME ?> <?php _e("settings", 'cms-tree-page-view') ?></h2>
 
 		<form method="post" action="options.php" class="cmtpv_options_form">
-			
+
 			<?php wp_nonce_field('update-options'); ?>
-					
+
 			<h3><?php _e("Select where to show a tree for pages and custom post types", 'cms-tree-page-view')?></h3>
-			
+
 			<table class="form-table">
-				
+
 				<tbody>
-				
+
 					<?php
-					
+
 					$options = cms_tpv_get_options();
 
 					$post_types = get_post_types(array(
 						"show_ui" => TRUE
 					), "objects");
 
-					
+
 					$arr_page_options = array();
 					foreach ($post_types as $one_post_type) {
 
@@ -649,7 +675,7 @@ function cms_tpv_options() {
 						}
 
 						$name = $one_post_type->name;
-						
+
 						if ($name === "post") {
 							// no support for pages. you could show them.. but since we can't reorder them there is not idea to show them.. or..?
 							// 14 jul 2011: ok, let's enable it for posts too. some people says it useful
@@ -663,7 +689,7 @@ function cms_tpv_options() {
 						$arr_page_options[] = "post-type-dashboard-$name";
 						$arr_page_options[] = "post-type-menu-$name";
 						$arr_page_options[] = "post-type-postsoverview-$name";
-						
+
 						echo "<tr>";
 
 						echo "<th scope='row'>";
@@ -673,10 +699,10 @@ function cms_tpv_options() {
 						echo "<td>";
 
 						echo "<p>";
-						
+
 						$checked = (in_array($name, $options["dashboard"])) ? " checked='checked' " : "";
 						echo "<input $checked type='checkbox' name='post-type-dashboard[]' value='$name' id='post-type-dashboard-$name' /> <label for='post-type-dashboard-$name'>" . __("On dashboard", 'cms-tree-page-view') . "</label>";
-						
+
 						echo "<br />";
 						$checked = (in_array($name, $options["menu"])) ? " checked='checked' " : "";
 						echo "<input $checked type='checkbox' name='post-type-menu[]' value='$name' id='post-type-menu-$name' /> <label for='post-type-menu-$name'>" . __("In menu", 'cms-tree-page-view') . "</label>";
@@ -708,7 +734,7 @@ function cms_tpv_options() {
 		</form>
 
 	</div>
-	
+
 	<?php
 }
 
@@ -719,7 +745,7 @@ function cms_tpv_options() {
 function cms_tpv_get_options() {
 
 	$arr_options = (array) get_option('cms_tpv_options');
-	
+
 	if (array_key_exists('dashboard', $arr_options)) {
 		$arr_options['dashboard'] = (array) @$arr_options['dashboard'];
 	} else {
@@ -731,13 +757,13 @@ function cms_tpv_get_options() {
 	} else {
 		$arr_options['menu'] = array();
 	}
-	
+
 	if (array_key_exists('postsoverview', $arr_options)) {
 		$arr_options['postsoverview'] = (array) @$arr_options['postsoverview'];
 	} else {
 		$arr_options['postsoverview'] = array();
 	}
-	
+
 	return $arr_options;
 
 }
@@ -757,7 +783,7 @@ function cms_tpv_get_selected_post_type() {
 		$page = isset($_GET["page"]) ? $_GET["page"] : "";
 		$post_type = str_replace("cms-tpv-page-", "", $page);
 	}
-	
+
 	if (!$post_type) { $post_type = "post"; }
 	return $post_type;
 }
@@ -766,7 +792,7 @@ function cms_tpv_get_selected_post_type() {
  * Determine if a post type is considered hierarchical
  */
 function cms_tpv_is_post_type_hierarchical($post_type_object) {
-	$is_hierarchical = $post_type_object->hierarchical;	
+	$is_hierarchical = $post_type_object->hierarchical;
 	// special case for posts, fake-support hierachical
 	if ("post" == $post_type_object->name) {
 		$is_hierarchical = true;
@@ -824,13 +850,13 @@ function cms_tpv_get_wpml_post_counts($post_type) {
  * Print tree stuff that is common for both dashboard and page
  */
 function cms_tpv_print_common_tree_stuff($post_type = "") {
-	
+
 	global $sitepress, $cms_tpv_view, $wpdb;
 
 	if ( ! $post_type ) {
 		$post_type = cms_tpv_get_selected_post_type();
 	}
-	
+
 	$post_type_object = get_post_type_object($post_type);
 	$get_pages_args = array("post_type" => $post_type);
 
@@ -846,7 +872,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 			$wmpl_active_for_post = TRUE;
 			$wpml_current_lang = $sitepress->get_current_language();
 		}
-	
+
 	}
 
 	$status_data_attributes = array("all" => "", "publish" => "", "trash" => "");
@@ -856,7 +882,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 
 		// Count code for WPML, mostly taken/inspired from  WPML Multilingual CMS, sitepress.class.php
 		$langs = array();
-		
+
 		$wpml_post_counts = cms_tpv_get_wpml_post_counts($post_type);
 
 		$post_count_all = (int) @$wpml_post_counts["private"][$wpml_current_lang] + (int) @$wpml_post_counts["future"][$wpml_current_lang] + (int) @$wpml_post_counts["publish"][$wpml_current_lang] + (int) @$wpml_post_counts["draft"][$wpml_current_lang];
@@ -880,7 +906,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 		$post_count_trash = $post_count->trash;
 	}
 
-	
+
 	// output js for the root/top level
 	// function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $post_type) {
 	// @todo: make into function since used at other places
@@ -892,7 +918,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 			$jstree_open[$i] = (int) str_replace("#cms-tpv-", "", $jstree_open[$i]);
 		}
 	}
-	
+
 
 	ob_start();
 	cms_tpv_print_childs(0, $cms_tpv_view, $jstree_open, $post_type);
@@ -903,7 +929,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 	<script type="text/javascript">
 		cms_tpv_jsondata["<?php echo $post_type ?>"] = <?php echo $json_data ?>;
 	</script>
-	
+
 	<div class="cms_tpv_wrapper">
 		<input type="hidden" name="cms_tpv_meta_post_type" value="<?php echo $post_type ?>" />
 		<input type="hidden" name="cms_tpv_meta_post_type_hierarchical" value="<?php echo (int) cms_tpv_is_post_type_hierarchical($post_type_object) ?>" />
@@ -964,7 +990,7 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 						<span class="count">(<?php echo $post_count_trash ?>)</span>
 					</a>
 				</li>
-	
+
 				<?php
 				if (cms_tpv_is_post_type_hierarchical($post_type_object)) {
 					?>
@@ -985,15 +1011,15 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 				</li>
 
 			</ul>
-				
+
 			<div class="cms_tpv_working">
 				<?php _e("Loading...", 'cms-tree-page-view') ?>
 			</div>
 
 			<div class="cms_tpv_message updated below-h2 hidden"><p>Message goes here.</p></div>
-			
+
 			<div class="updated below-h2 hidden cms_tpv_search_no_hits"><p><?php _e("Search: no pages found", 'cms-tree-page-view') ?></p></div>
-			
+
 			<div class="cms_tpv_container tree-default">
 				<?php _e("Loading tree", 'cms-tree-page-view') ?>
 			</div>
@@ -1015,9 +1041,9 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 				<p class="cms_tpv_action_add_and_edit_page">
 
 					<span class='cms_tpv_action_add_page'><?php echo $post_type_object->labels->add_new_item ?></span>
-					
+
 					<a class='cms_tpv_action_add_page_after' href="#" title='<?php _e("Add new page after", "cms-tree-page-view")?>' ><?php _e("After", "cms-tree-page-view")?></a>
-					
+
 					<?php
 					// if post type is hierarchical we can add pages inside
 					if (cms_tpv_is_post_type_hierarchical($post_type_object)) {
@@ -1030,13 +1056,13 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 				</p>
 
 				<div class="cms_tpv_action_add_doit">
-					
+
 					<form method="post" action="<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>">
 
 						<input type="hidden" name="action" value="cms_tpv_add_pages">
 						<input type="hidden" name="ref_post_id" value="">
 						<?php wp_nonce_field("cms-tpv-add-pages") ?>
-						
+
 						<!-- lang for wpml -->
 						<input type="hidden" name="lang" value="">
 
@@ -1077,9 +1103,9 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 				</div>
 
 				<dl>
-					<dt><?php  _e("Last modified", "cms-tree-page-view") ?></dt>
+					<dt><?php  _e("Last modified", 'cms-tree-page-view') ?></dt>
 					<dd>
-						<span class="cms_tpv_page_actions_modified_time"></span> <?php _e("by", "cms-tree-page-view") ?> 
+						<span class="cms_tpv_page_actions_modified_time"></span> <?php _e("by", "cms-tree-page-view") ?>
 						<span class="cms_tpv_page_actions_modified_by"></span>
 					</dd>
 					<dt><?php  _e("Page ID", "cms-tree-page-view") ?></dt>
@@ -1093,13 +1119,13 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 		}
 
 		if (empty($pages)) {
-		
+
 			echo '<div class="updated fade below-h2"><p>' . __("No posts found.", 'cms-tree-page-view') . '</p></div>';
-		
+
 		}
 
 		?>
-		
+
 	</div>
 	<?php
 } // func
@@ -1119,7 +1145,7 @@ function cms_tpv_pages_page() {
 	} else {
 		$post_new_file = 'post-new.php';
 	}
-	
+
 	?>
 	<div class="wrap">
 		<?php echo get_screen_icon(); ?>
@@ -1134,7 +1160,7 @@ function cms_tpv_pages_page() {
 			}
 
 		?></h2>
-		
+
 		<?php
 		cms_tpv_print_common_tree_stuff($post_type);
 		?>
@@ -1175,13 +1201,13 @@ function cms_tpv_get_pages($args = null) {
 	if ($r["view"] == "all") {
 		$get_posts_args["post_status"] = "any"; // "any" seems to get all but auto-drafts
 	} elseif ($r["view"] == "trash") {
-		
+
 		$get_posts_args["post_status"] = "trash";
 
 		// if getting trash, just get all pages, don't care about parent?
 		// because otherwise we have to mix trashed pages and pages with other statuses. messy.
 		$get_posts_args["post_parent"] = null;
-		
+
 	} else {
 		$get_posts_args["post_status"] = "publish";
 	}
@@ -1202,7 +1228,7 @@ function cms_tpv_get_pages($args = null) {
 		// Note: get_pages filter uses orderby comma separated and with the key sort_column
 		$get_posts_args["sort_column"] = str_replace(" ", ", ", $get_posts_args["orderby"]);
 	$pages = apply_filters('get_pages', $pages, $get_posts_args);
-	
+
 	return $pages;
 
 }
@@ -1223,8 +1249,8 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 
 		global $current_screen;
 		$screen = convert_to_screen("edit");
-		#return;	
-		
+		#return;
+
 		// If this is set to null then quick/bul edit stops working on posts (not pages)
 		// If did set it to null sometime. Can't remember why...
 		// $screen->post_type = null;
@@ -1237,14 +1263,14 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 		unset($posts_columns["cb"], $posts_columns["title"], $posts_columns["author"], $posts_columns["categories"], $posts_columns["tags"], $posts_columns["date"]);
 
 		global $post;
-		
+
 		// Translated post statuses
 		$post_statuses = get_post_statuses();
 
-	
+
 		?>[<?php
 		for ($i=0, $pagesCount = sizeof($arrPages); $i<$pagesCount; $i++) {
-	
+
 			$onePage = $arrPages[$i];
 			$tmpPost = $post;
 			$post = $onePage;
@@ -1255,7 +1281,7 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			$content = esc_html($onePage->post_content);
 			$content = str_replace(array("\n","\r"), "", $content);
 			$hasChildren = false;
-			
+
 			// if viewing trash, don't get children. we watch them "flat" instead
 			if ($view == "trash") {
 			} else {
@@ -1270,13 +1296,13 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			if (!$hasChildren) {
 				$strState = '';
 			}
-			
+
 			// type of node
 			$rel = $onePage->post_status;
 			if ($onePage->post_password) {
 				$rel = "password";
 			}
-			
+
 			// modified time
 			$post_modified_time = strtotime($onePage->post_modified);
 			$post_modified_time =  date_i18n(get_option('date_format'), $post_modified_time, false);
@@ -1288,7 +1314,7 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			if (empty($post_author)) {
 				$post_author = __("Unknown user", 'cms-tree-page-view');
 			}
-			
+
 			$title = get_the_title($onePage->ID); // so hooks and stuff will do their work
 
 			$title = apply_filters("cms_tree_page_view_post_title", $title, $onePage);
@@ -1300,7 +1326,7 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			$arr_page_css_styles = array();
 			$user_can_edit_page = apply_filters("cms_tree_page_view_post_can_edit", current_user_can( $post_type_object->cap->edit_post, $page_id), $page_id);
 			$user_can_add_inside = apply_filters("cms_tree_page_view_post_user_can_add_inside", current_user_can( $post_type_object->cap->create_posts, $page_id), $page_id);
-			$user_can_add_after = apply_filters("cms_tree_page_view_post_user_can_add_after", current_user_can( $post_type_object->cap->create_posts, $page_id), $page_id);	
+			$user_can_add_after = apply_filters("cms_tree_page_view_post_user_can_add_after", current_user_can( $post_type_object->cap->create_posts, $page_id), $page_id);
 
 			if ( $user_can_edit_page ) {
 				$arr_page_css_styles[] = "cms_tpv_user_can_edit_page_yes";
@@ -1413,10 +1439,10 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 			if ($i < $pagesCount-1) {
 				?>,<?php
 			}
-			
+
 			// return orgiginal post
 			$post = $tmpPost;
-			
+
 		}
 		?>]<?php
 	}
@@ -1441,13 +1467,13 @@ function cms_tpv_get_childs() {
 	}
 
 	if ($action) {
-	
+
 		if ($search) {
-			
+
 			// find all pages that contains $search
 			// collect all post_parent
 			// for each parent id traverse up until post_parent is 0, saving all ids on the way
-			
+
 			// what to search: since all we see in the GUI is the title, just search that
 			global $wpdb;
 			$sqlsearch = "%{$search}%";
@@ -1458,7 +1484,7 @@ function cms_tpv_get_childs() {
 			foreach ($hits as $oneHit) {
 				$arrNodesToOpen[] = $oneHit->post_parent;
 			}
-			
+
 			$arrNodesToOpen = array_unique($arrNodesToOpen);
 			$arrNodesToOpen2 = array();
 			// find all parents to the arrnodestopen
@@ -1475,14 +1501,14 @@ function cms_tpv_get_childs() {
 					}
 				}
 			}
-			
+
 			$arrNodesToOpen = array_merge($arrNodesToOpen, $arrNodesToOpen2);
 			$sReturn = "";
 			#foreach ($arrNodesToOpen as $oneNodeID) {
 			#	$sReturn .= "cms-tpv-{$oneNodeID},";
 			#}
 			#$sReturn = preg_replace("/,$/", "", $sReturn);
-			
+
 			foreach ($arrNodesToOpen as $oneNodeID) {
 				$sReturn .= "\"#cms-tpv-{$oneNodeID}\",";
 			}
@@ -1490,7 +1516,7 @@ function cms_tpv_get_childs() {
 			if ($sReturn) {
 				$sReturn = "[" . $sReturn . "]";
 			}
-			
+
 			if ($sReturn) {
 				echo $sReturn;
 			} else {
@@ -1501,7 +1527,7 @@ function cms_tpv_get_childs() {
 			exit;
 
 		} else {
-		
+
 			// regular get
 
 			$id = (isset($_GET["id"])) ? $_GET["id"] : null;
@@ -1532,7 +1558,7 @@ function cms_tpv_add_page() {
 
 	/*
 	(
-	[action] => cms_tpv_add_page 
+	[action] => cms_tpv_add_page
 	[pageID] => cms-tpv-1318
 	type
 	)
@@ -1546,7 +1572,7 @@ function cms_tpv_add_page() {
 	if (!$page_title) { $page_title = __("New page", 'cms-tree-page-view'); }
 
 	$ref_post = get_post($pageID);
-	
+
 	if ("after" == $type) {
 
 		/*
@@ -1554,8 +1580,8 @@ function cms_tpv_add_page() {
 		*/
 
 		// update menu_order of all pages below our page
-		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_parent = %d AND menu_order >= %d AND id <> %d ", $ref_post->post_parent, $ref_post->menu_order, $ref_post->ID ) );		
-		
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_parent = %d AND menu_order >= %d AND id <> %d ", $ref_post->post_parent, $ref_post->menu_order, $ref_post->ID ) );
+
 		// create a new page and then goto it
 		$post_new = array();
 		$post_new["menu_order"] = $ref_post->menu_order+1;
@@ -1574,7 +1600,7 @@ function cms_tpv_add_page() {
 		*/
 
 		// update menu_order, so our new post is the only one with order 0
-		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_parent = %d", $ref_post->ID) );		
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_parent = %d", $ref_post->ID) );
 
 		$post_new = array();
 		$post_new["menu_order"] = 0;
@@ -1599,8 +1625,8 @@ function cms_tpv_add_page() {
 		// fail, tell js
 		echo "0";
 	}
-	
-	
+
+
 	exit;
 }
 
@@ -1610,7 +1636,7 @@ function cms_tpv_move_page() {
 	/*
 	 the node that was moved,
 	 the reference node in the move,
-	 the new position relative to the reference node (one of "before", "after" or "inside"), 
+	 the new position relative to the reference node (one of "before", "after" or "inside"),
 		inside = man placerar den under en sida som inte har några barn?
 	*/
 
@@ -1625,23 +1651,23 @@ function cms_tpv_move_page() {
 
 	$node_id = str_replace("cms-tpv-", "", $node_id);
 	$ref_node_id = str_replace("cms-tpv-", "", $ref_node_id);
-	
+
 	$_POST["skip_sitepress_actions"] = true; // sitepress.class.php->save_post_actions
-	
+
 	if ($node_id && $ref_node_id) {
 		#echo "\nnode_id: $node_id";
-		#echo "\ntype: $type";	
-		
+		#echo "\ntype: $type";
+
 		$post_node = get_post($node_id);
 		$post_ref_node = get_post($ref_node_id);
-		
+
 		// first check that post_node (moved post) is not in trash. we do not move them
 		if ($post_node->post_status == "trash") {
 			exit;
 		}
 
 		if ( "inside" == $type ) {
-			
+
 			// post_node is moved inside ref_post_node
 			// add ref_post_node as parent to post_node and set post_nodes menu_order to 0
 			// @todo: shouldn't menu order of existing items be changed?
@@ -1652,11 +1678,11 @@ function cms_tpv_move_page() {
 				"post_type" => $post_ref_node->post_type
 			);
 			wp_update_post( $post_to_save );
-			
+
 			echo "did inside";
-			
+
 		} elseif ( "before" == $type ) {
-		
+
 			// post_node is placed before ref_post_node
 			// update menu_order of all pages with a menu order more than or equal ref_node_post and with the same parent as ref_node_post
 			// we do this so there will be room for our page if it's the first page
@@ -1666,7 +1692,7 @@ function cms_tpv_move_page() {
 			// update menu order with +1 for all pages below ref_node, this should fix the problem with "unmovable" pages because of
 			// multiple pages with the same menu order (...which is not the fault of this plugin!)
 			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE menu_order >= %d", $post_ref_node->menu_order+1) );
-			
+
 			$post_to_save = array(
 				"ID" => $post_node->ID,
 				"menu_order" => $post_ref_node->menu_order,
@@ -1678,9 +1704,9 @@ function cms_tpv_move_page() {
 			echo "did before";
 
 		} elseif ( "after" == $type ) {
-		
+
 			// post_node is placed after ref_post_node
-			
+
 			// update menu_order of all posts with the same parent ref_post_node and with a menu_order of the same as ref_post_node, but do not include ref_post_node
 			// +2 since multiple can have same menu order and we want our moved post to have a unique "spot"
 			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_parent = %d AND menu_order >= %d AND id <> %d ", $post_ref_node->post_parent, $post_ref_node->menu_order, $post_ref_node->ID ) );
@@ -1695,16 +1721,16 @@ function cms_tpv_move_page() {
 				"post_type" => $post_ref_node->post_type
 			);
 			wp_update_post( $post_to_save );
-			
+
 			echo "did after";
 		}
-		
+
 		#echo "ok"; // I'm done here!
-		
+
 	} else {
 		// error
 	}
-	
+
 	// ok, we have updated the order of the pages
 	// but we must tell wordpress that we have done something
 	// other plugins (cache plugins) will not know to clear the cache otherwise
@@ -1713,9 +1739,9 @@ function cms_tpv_move_page() {
 	#wp_update_post(array("ID" => $node_id));
 	#wp_update_post(array("ID" => $post_ref_node));
 	#clean_page_cache($node_id); clean_page_cache($post_ref_node); // hmpf.. db cache reloaded don't care
-	
+
 	do_action("cms_tree_page_view_node_move_finish");
-	
+
 	exit;
 }
 
@@ -1724,7 +1750,7 @@ function cms_tpv_move_page() {
  * Show a box with some dontate-links and stuff
  */
 function cms_tpv_show_annoying_box() {
-	
+
 	//update_option('cms_tpv_show_annoying_little_box', 1); // enable this to show box while testing
 
 	if ( isset($_GET["action"]) && "cms_tpv_remove_annoying_box" == $_GET["action"] ) {
@@ -1782,7 +1808,7 @@ function cms_tpv_install() {
 
 	// after upgrading/re-enabling the plugin, also re-enable the little please-donate-box
 	update_option('cms_tpv_show_annoying_little_box', 1);
-	
+
 	// first install or pre custom posts version:
 	// make sure pages are enabled by default
 	cms_tpv_setup_defaults();
@@ -1884,7 +1910,7 @@ function cms_tpv_setup_defaults() {
 		$options["postsoverview"] = array_unique($options["postsoverview"]);
 
 		update_option('cms_tpv_options', $options);
-	
+
 	}
 
 }
@@ -1896,15 +1922,15 @@ function cms_tpv_setup_defaults() {
 function cms_tpv_plugins_loaded($a) {
 
 	$installed_version = get_option('cms_tpv_version', 0);
-	
+
 	//echo "installed_version in options table: $installed_version";
 	//echo "<br>version according to this file" . CMS_TPV_VERSION;
 
 	if ($installed_version != CMS_TPV_VERSION) {
-		
+
 		// new version!
 		// upgrade stored version to current version
-		update_option('cms_tpv_version', CMS_TPV_VERSION);	
+		update_option('cms_tpv_version', CMS_TPV_VERSION);
 
 		// show that annoying litte box again
 		update_option('cms_tpv_show_annoying_little_box', 1);
