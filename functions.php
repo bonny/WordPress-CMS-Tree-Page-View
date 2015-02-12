@@ -421,6 +421,57 @@ function cms_tpv_admin_init() {
 	#add_settings_section("cms_tree_page_view_settings", "cms_tree_page_view", "", "");
 	#register_setting( 'cms_tree_page_view_settings', "post-type-dashboard-post" );
 
+	// Add little promo box
+	add_action("cms_tree_page_view/before_wrapper", "cms_tpv_promo_above_wrapper");
+
+}
+
+function cms_tpv_promo_above_wrapper() {
+
+	// enable this to show box while testing
+	//update_option('cms_tpv_show_promo', 1);
+
+	if ( isset($_GET["action"]) && "cms_tpv_remove_promo" == $_GET["action"] ) {
+		$show_box = 0;
+		update_option('cms_tpv_show_promo', $show_box);
+	} else {
+		$show_box = get_option('cms_tpv_show_promo', 1);
+	}
+
+	if ( ! $show_box ) {
+		return;
+	}
+	?>
+	<style>
+		.cms_tpv_promo_above_wrapper {
+			padding: 15px;
+			background: #fff;
+			box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+		}
+		.cms_tpv_promo_above_wrapper p {
+			margin: .25em 0;
+		}
+		.cms_tpv_promo_above_wrapper-close {
+			text-align: right;
+		}
+	</style>
+	<div class="cms_tpv_promo_above_wrapper">
+
+		<p>Thanks for using <b>CMS Tree Page View</b>!</p>
+
+		<p>Do you like this plugin? Then <a href="https://wordpress.org/support/view/plugin-reviews/cms-tree-page-view#topic">give it a nice review</a>!</p>
+
+		<p>Want to see who in you team edited what and when?
+			Then <a href="https://wordpress.org/plugins/simple-history/">Simple History</a> is the plugin you need!
+
+		<p class="cms_tpv_promo_above_wrapper-close">
+			<a href="<?php echo add_query_arg("action", "cms_tpv_remove_promo")?>">
+				<?php _e("Hide until next upgrade", 'cms-tree-page-view') ?>
+			</a>
+		</p>
+
+	</div>
+	<?php
 
 }
 
@@ -929,6 +980,10 @@ function cms_tpv_print_common_tree_stuff($post_type = "") {
 	<script type="text/javascript">
 		cms_tpv_jsondata["<?php echo $post_type ?>"] = <?php echo $json_data ?>;
 	</script>
+
+	<?php
+	do_action("cms_tree_page_view/before_wrapper");
+	?>
 
 	<div class="cms_tpv_wrapper">
 		<input type="hidden" name="cms_tpv_meta_post_type" value="<?php echo $post_type ?>" />
@@ -1808,6 +1863,7 @@ function cms_tpv_install() {
 
 	// after upgrading/re-enabling the plugin, also re-enable the little please-donate-box
 	update_option('cms_tpv_show_annoying_little_box', 1);
+	update_option('cms_tpv_show_promo', 1);
 
 	// first install or pre custom posts version:
 	// make sure pages are enabled by default
@@ -1934,6 +1990,7 @@ function cms_tpv_plugins_loaded($a) {
 
 		// show that annoying litte box again
 		update_option('cms_tpv_show_annoying_little_box', 1);
+		update_option('cms_tpv_show_promo', 1);
 
 		// setup caps/persmissions
 		cms_tvp_setup_caps();
