@@ -1829,7 +1829,7 @@ function cms_tvp_setup_caps() {
 	);
 
 	foreach ( $roles as $role => $caps ) {
-		add_caps_to_role( $role, $caps );
+		cms_tpv_add_caps_to_role( $role, $caps );
 	}
 
 }
@@ -1843,7 +1843,7 @@ function cms_tpv_uninstall() {
 	);
 
 	foreach ( $roles as $role => $caps ) {
-			remove_caps_from_role( $role, $caps );
+			cms_tpv_remove_caps_from_role( $role, $caps );
 	}
 
 }
@@ -1851,7 +1851,7 @@ function cms_tpv_uninstall() {
 /**
 * Adds an array of capabilities to a role.
 */
-function add_caps_to_role( $role, $caps ) {
+function cms_tpv_add_caps_to_role( $role, $caps ) {
 
 	global $wp_roles;
 
@@ -1865,7 +1865,7 @@ function add_caps_to_role( $role, $caps ) {
 /**
 * Remove an array of capabilities from role.
 */
-function remove_caps_from_role( $role, $caps ) {
+function cms_tpv_remove_caps_from_role( $role, $caps ) {
 
 	global $wp_roles;
 
