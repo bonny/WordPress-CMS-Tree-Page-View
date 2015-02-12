@@ -115,6 +115,10 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
+= 1.2.xx =
+
+- Fixed so existing pages/posts keep their original author and last modified time. Thanks Heikki Paananen for finding and fixing this.
+
 = 1.2.30 =
 
 - Updated German translation. Thank you translator!
