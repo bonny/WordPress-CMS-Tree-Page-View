@@ -465,7 +465,7 @@ function cms_tpv_promo_above_wrapper() {
 			Then <a href="https://wordpress.org/plugins/simple-history/">Simple History</a> is the plugin you need!
 
 		<p class="cms_tpv_promo_above_wrapper-close">
-			<a href="<?php echo add_query_arg("action", "cms_tpv_remove_promo")?>">
+			<a href="<?php echo esc_url( add_query_arg("action", "cms_tpv_remove_promo") ) ?>">
 				<?php _e("Hide until next upgrade", 'cms-tree-page-view') ?>
 			</a>
 		</p>
@@ -1673,7 +1673,7 @@ function cms_tpv_add_page() {
 		// return editlink for the newly created page
 		$editLink = get_edit_post_link($newPostID, '');
 		if ($wpml_lang) {
-			$editLink = add_query_arg("lang", $wpml_lang, $editLink);
+			$editLink = esc_url( add_query_arg("lang", $wpml_lang, $editLink) );
 		}
 		echo $editLink;
 	} else {
@@ -1836,7 +1836,7 @@ function cms_tpv_show_annoying_box() {
 			<p><?php printf(__('Please see the <a href="%1$s">support forum</a> for help.', 'cms-tree-page-view'), "http://wordpress.org/support/plugin/cms-tree-page-view") ?></p>
 
 			<p class="cms_tpv_annoying_little_box_close">
-				<a href="<?php echo add_query_arg("action", "cms_tpv_remove_annoying_box")?>">
+				<a href="<?php echo esc_url( add_query_arg("action", "cms_tpv_remove_annoying_box") ) ?>">
 					<?php _e("Hide until next upgrade", 'cms-tree-page-view') ?>
 				</a>
 			</p>
