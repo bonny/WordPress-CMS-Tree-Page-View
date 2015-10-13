@@ -1635,7 +1635,7 @@ function cms_tpv_add_page() {
 		*/
 
 		// update menu_order of all pages below our page
-		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_parent = %d AND menu_order >= %d AND id <> %d ", $ref_post->post_parent, $ref_post->menu_order, $ref_post->ID ) );
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_type = %s AND post_parent = %d AND menu_order >= %d AND id <> %d ", $ref_post->post_type, $ref_post->post_parent, $ref_post->menu_order, $ref_post->ID ) );
 
 		// create a new page and then goto it
 		$post_new = array();
@@ -1655,7 +1655,7 @@ function cms_tpv_add_page() {
 		*/
 
 		// update menu_order, so our new post is the only one with order 0
-		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_parent = %d", $ref_post->ID) );
+		$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_type = %s AND post_parent = %d", $ref_post->post_type, $ref_post->ID) );
 
 		$post_new = array();
 		$post_new["menu_order"] = 0;
@@ -1742,11 +1742,11 @@ function cms_tpv_move_page() {
 			// update menu_order of all pages with a menu order more than or equal ref_node_post and with the same parent as ref_node_post
 			// we do this so there will be room for our page if it's the first page
 			// so: no move of individial posts yet
-			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_parent = %d", $post_ref_node->post_parent ) );
+			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_type = %s AND post_parent = %d", $post_ref_node->post_type, $post_ref_node->post_parent ) );
 
 			// update menu order with +1 for all pages below ref_node, this should fix the problem with "unmovable" pages because of
 			// multiple pages with the same menu order (...which is not the fault of this plugin!)
-			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE menu_order >= %d", $post_ref_node->menu_order+1) );
+			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+1 WHERE post_type = %s AND menu_order >= %d", $post_ref_node->post_type, $post_ref_node->menu_order+1) );
 
 			$post_to_save = array(
 				"ID" => $post_node->ID,
@@ -1764,7 +1764,7 @@ function cms_tpv_move_page() {
 
 			// update menu_order of all posts with the same parent ref_post_node and with a menu_order of the same as ref_post_node, but do not include ref_post_node
 			// +2 since multiple can have same menu order and we want our moved post to have a unique "spot"
-			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_parent = %d AND menu_order >= %d AND id <> %d ", $post_ref_node->post_parent, $post_ref_node->menu_order, $post_ref_node->ID ) );
+			$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = menu_order+2 WHERE post_type = %s AND post_parent = %d AND menu_order >= %d AND id <> %d ", $post_ref_node->post_type, $post_ref_node->post_parent, $post_ref_node->menu_order, $post_ref_node->ID ) );
 
 			// update menu_order of post_node to the same that ref_post_node_had+1
 			#$wpdb->query( $wpdb->prepare( "UPDATE $wpdb->posts SET menu_order = %d, post_parent = %d WHERE ID = %d", $post_ref_node->menu_order+1, $post_ref_node->post_parent, $post_node->ID ) );
