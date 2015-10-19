@@ -5,7 +5,7 @@ Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and
 Text Domain: cms-tree-page-view
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.2.32
+Stable tag: 1.2.33
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -116,9 +116,10 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
-= 1.2.3x =
+= 1.2.33 =
 
 - Fix conflicts with Formidable Forms. Fixes https://wordpress.org/support/topic/conflicts-with-formidable-forms. Thanks https://github.com/alexciarlillo for the pull request.
+- Maybe fix a URL path problem some had with HTTPS. Please let me know if you had problems over HTTPS and if this update solved it. Thanks!
 - Make donate blah-blah-nag-thingie perhaps and hopefully a little bit less annoying.
 
 = 1.2.32 =

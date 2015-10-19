@@ -27,7 +27,7 @@ License: GPL2
 
 #require("functions.php");
 
-define( "CMS_TPV_VERSION", "1.2.32");
+define( "CMS_TPV_VERSION", "1.2.33");
 define( "CMS_TPV_NAME", "CMS Tree Page View");
 
 require(dirname(__FILE__) . "/functions.php");
@@ -43,7 +43,8 @@ if ( isset( $network_plugin ) ) {
 if ( isset( $plugin ) ) {
 	$aa = $plugin;
 }
-$plugin_dir_url = plugin_dir_url(basename($aa)) . 'cms-tree-page-view/';
+
+$plugin_dir_url = trailingslashit( plugin_dir_url(basename($aa)) . basename(dirname($aa)) );
 
 // There! Now we should have it.
 define( "CMS_TPV_URL", $plugin_dir_url);
