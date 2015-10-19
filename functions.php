@@ -447,12 +447,27 @@ function cms_tpv_promo_above_wrapper() {
 			padding: 15px;
 			background: #fff;
 			box-shadow: 0 1px 1px 0 rgba(0,0,0,.15);
+			float: right;
+			width: 250px;
 		}
 		.cms_tpv_promo_above_wrapper p {
 			margin: .25em 0;
 		}
 		.cms_tpv_promo_above_wrapper-close {
 			text-align: right;
+		}
+		.cms_tpv_promo_above_wrapper-close a {
+			color: #aaa;
+			text-decoration: none;
+		}
+		.cms_tpv_promo_above_wrapper-close a:hover {
+			text-decoration: underline;
+		}
+		/* hide on smallish screens */
+		@media screen and (max-width: 1000px) {
+			.cms_tpv_promo_above_wrapper {
+				display: none;
+			}
 		}
 	</style>
 	<div class="cms_tpv_promo_above_wrapper">

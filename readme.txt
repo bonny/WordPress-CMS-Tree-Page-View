@@ -116,6 +116,11 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
+= 1.2.3x =
+
+- Fix conflicts with Formidable Forms. Fixes https://wordpress.org/support/topic/conflicts-with-formidable-forms. Thanks https://github.com/alexciarlillo for the pull request.
+- Make donate blah-blah-nag-thingie perhaps and hopefully a little bit less annoying.
+
 = 1.2.32 =
 
 - Fix for possible XSS attack.
