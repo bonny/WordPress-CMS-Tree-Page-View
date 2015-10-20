@@ -1927,7 +1927,7 @@ function cms_tpv_add_caps_to_role( $role, $caps ) {
 	global $wp_roles;
 
 	if ( $wp_roles->is_role( $role ) ) {
-		$role =& get_role( $role );
+		$role = get_role( $role );
 		foreach ( $caps as $cap )
 			$role->add_cap( $cap );
 	}
@@ -1941,7 +1941,7 @@ function cms_tpv_remove_caps_from_role( $role, $caps ) {
 	global $wp_roles;
 
 	if ( $wp_roles->is_role( $role ) ) {
-		$role =& get_role( $role );
+		$role = get_role( $role );
 		foreach ( $caps as $cap )
 			$role->remove_cap( $cap );
 	}
