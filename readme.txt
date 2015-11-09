@@ -92,8 +92,9 @@ If you want to always have a list of your pages available in your WordPress admi
 [Admin Menu Tree Page View](http://wordpress.org/extend/plugins/admin-menu-tree-page-view/).
 
 #### Donation and more plugins
+
+* Check out my other plugin [Simple History](http://simple-history.com/) if you want to see a log of changes in your WordPress admin. With Simple History you can see login attempts (both failed and sucessful), page changes, plugin updated, and more. It's a great way to view user actions on your site!
 * If you like this plugin don't forget to [donate to support further development](http://eskapism.se/sida/donate/).
-* More [WordPress CMS plugins](http://wordpress.org/extend/plugins/profile/eskapism) by the same author.
 
 == Installation ==
 
@@ -122,6 +123,7 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 Fixes http://eskapism.se/wordpress/cms-tree-page-view/comment-page-4/#comment-99867 and
 https://wordpress.org/support/topic/strict-standards-only-variables-should-be-assigned-by-reference-1
 and possible more.
+- Remove donate-box from dashboard, because it was highly annoying and looked terrible there.
 
 = 1.2.33 =
 
@@ -551,7 +553,7 @@ http://wordpress.org/support/topic/plugin-cms-tree-page-view-broken-for-language
 - added swedish translation by Måns Jonasson
 
 = 0.4.3 =
-- forgot the domain for _e at some places
+- forgot the domain for `_e` at some places
 
 = 0.4.2 =
 - added .pot-file

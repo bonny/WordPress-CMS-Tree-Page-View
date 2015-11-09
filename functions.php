@@ -438,6 +438,12 @@ function cms_tpv_promo_above_wrapper() {
 		$show_box = get_option('cms_tpv_show_promo', 1);
 	}
 
+	// Never show on dashboard, becuase highly annoying
+	$current_screen = get_current_screen();
+	if ( $current_screen->id === "dashboard" ) {
+		$show_box = false;
+	}
+
 	if ( ! $show_box ) {
 		return;
 	}
