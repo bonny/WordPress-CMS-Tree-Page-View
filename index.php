@@ -36,14 +36,14 @@ require(dirname(__FILE__) . "/functions.php");
 
 // Find the plugin directory URL
 $aa = __FILE__;
-if ( isset( $mu_plugin ) ) {
-	$aa = $mu_plugin;
+if ( isset( $cms_tpv_mu_plugin ) ) {
+	$aa = $cms_tpv_mu_plugin;
 }
-if ( isset( $network_plugin ) ) {
-	$aa = $network_plugin;
+if ( isset( $cms_tpv_network_plugin ) ) {
+	$aa = $cms_tpv_network_plugin;
 }
-if ( isset( $plugin ) ) {
-	$aa = $plugin;
+if ( isset( $cms_tpv_plugin ) ) {
+	$aa = $cms_tpv_plugin;
 }
 
 $plugin_dir_url = trailingslashit( plugin_dir_url(basename($aa)) . basename(dirname($aa)) );
