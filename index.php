@@ -46,7 +46,7 @@ if ( isset( $cms_tpv_plugin ) ) {
 	$aa = $cms_tpv_plugin;
 }
 
-$plugin_dir_url = trailingslashit( plugin_dir_url(basename($aa)) . basename(dirname($aa)) );
+$plugin_dir_url = plugin_dir_url($aa);
 
 // There! Now we should have it.
 define( "CMS_TPV_URL", $plugin_dir_url);
