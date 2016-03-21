@@ -1260,6 +1260,7 @@ function cms_tpv_get_pages($args = null) {
 	$r = wp_parse_args( $args, $defaults );
 
 	$get_posts_args = array(
+		"fields" => "ids",
 		"numberposts" => "-1",
 		"orderby" => "menu_order title",
 		"order" => "ASC",
@@ -1347,7 +1348,9 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 		?>[<?php
 		for ($i=0, $pagesCount = sizeof($arrPages); $i<$pagesCount; $i++) {
 
-			$onePage = $arrPages[$i];
+			$temp_page_id = $arrPages[$i];
+			$onePage = get_post($temp_page_id);
+
 			$tmpPost = $post;
 			$post = $onePage;
 			$page_id = $onePage->ID;

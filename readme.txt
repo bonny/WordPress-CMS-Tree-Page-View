@@ -5,7 +5,7 @@ Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and
 Text Domain: cms-tree-page-view
 Requires at least: 3.8
 Tested up to: 4.2
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -116,6 +116,11 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 
 == Changelog ==
+
+= 1.3.2 =
+
+- Make the page tree use less memory. Should work ok with very large amount of pages now.
+Fixes https://wordpress.org/support/topic/fatal-error-allowed-memory-size-exhausted-27.
 
 = 1.3.1 =
 
