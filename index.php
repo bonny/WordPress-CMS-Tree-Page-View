@@ -29,24 +29,24 @@ License: GPL2
 
 #require("functions.php");
 
-define( "CMS_TPV_VERSION", "1.3");
+define( "CMS_TPV_VERSION", "1.3.1");
 define( "CMS_TPV_NAME", "CMS Tree Page View");
 
 require(dirname(__FILE__) . "/functions.php");
 
 // Find the plugin directory URL
 $aa = __FILE__;
-if ( isset( $mu_plugin ) ) {
-	$aa = $mu_plugin;
+if ( isset( $cms_tpv_mu_plugin ) ) {
+	$aa = $cms_tpv_mu_plugin;
 }
-if ( isset( $network_plugin ) ) {
-	$aa = $network_plugin;
+if ( isset( $cms_tpv_network_plugin ) ) {
+	$aa = $cms_tpv_network_plugin;
 }
-if ( isset( $plugin ) ) {
-	$aa = $plugin;
+if ( isset( $cms_tpv_plugin ) ) {
+	$aa = $cms_tpv_plugin;
 }
 
-$plugin_dir_url = trailingslashit( plugin_dir_url(basename($aa)) . basename(dirname($aa)) );
+$plugin_dir_url = plugin_dir_url($aa);
 
 // There! Now we should have it.
 define( "CMS_TPV_URL", $plugin_dir_url);
