@@ -29,7 +29,7 @@ License: GPL2
 
 #require("functions.php");
 
-define( "CMS_TPV_VERSION", "1.3");
+define( "CMS_TPV_VERSION", "1.3.1");
 define( "CMS_TPV_NAME", "CMS Tree Page View");
 
 require(dirname(__FILE__) . "/functions.php");
