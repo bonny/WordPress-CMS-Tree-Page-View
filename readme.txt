@@ -117,7 +117,7 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
-= 1.3.2 =
+= 1.3.2 (March 2016) =
 
 - Make the page tree use less memory. Should work ok with very large amount of pages now.
 Fixes https://wordpress.org/support/topic/fatal-error-allowed-memory-size-exhausted-27.
