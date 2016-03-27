@@ -288,7 +288,8 @@ function cms_tpv_admin_head() {
 	<script type="text/javascript">
 		/* <![CDATA[ */
 		var CMS_TPV_URL = "<?php echo CMS_TPV_URL ?>";
-		var CMS_TPV_AJAXURL = "?action=cms_tpv_get_childs&view=";
+		var CMS_TPV_AJAXURL = "action=cms_tpv_get_childs&view=";
+		CMS_TPV_AJAXURL = ((window.ajaxurl.indexOf("admin-ajax.php?") !== -1) ? "&" : "?") + CMS_TPV_AJAXURL;
 		var CMS_TPV_VIEW = "<?php echo $cms_tpv_view ?>";
 		//var CMS_TPV_CAN_DND = "<?php echo current_user_can( CMS_TPV_MOVE_PERMISSION ) ? "dnd" : "" ?>";
 		var CMS_TPV_CAN_DND = "dnd";
@@ -1302,11 +1303,26 @@ function cms_tpv_get_pages($args = null) {
 
 	// filter out pages for wpml, by applying same filter as get_pages does
 	// only run if wpml is available or always?
-		// Note: get_pages filter uses orderby comma separated and with the key sort_column
-		$get_posts_args["sort_column"] = str_replace(" ", ", ", $get_posts_args["orderby"]);
-	$pages = apply_filters('get_pages', $pages, $get_posts_args);
+	// Note: get_pages filter uses orderby comma separated and with the key sort_column
+	$get_posts_args["sort_column"] = str_replace(" ", ", ", $get_posts_args["orderby"]);
+	
+	// We only fetch ids above, but if we run the get_pages filter we need to send pages as object
+	
+	$pages_as_objects = array();
 
-	return $pages;
+	foreach ($pages as $page_id) {
+
+		$one_page = new stdClass();
+		$one_page->ID = $page_id;
+		$pages_as_objects[] = $one_page;
+
+	}
+
+	// echo "<pre>";print_r($pages_as_objects);exit;
+
+	$pages_as_objects = apply_filters('get_pages', $pages_as_objects, $get_posts_args);
+
+	return $pages_as_objects;
 
 }
 
@@ -1348,8 +1364,7 @@ function cms_tpv_print_childs($pageID, $view = "all", $arrOpenChilds = null, $po
 		?>[<?php
 		for ($i=0, $pagesCount = sizeof($arrPages); $i<$pagesCount; $i++) {
 
-			$temp_page_id = $arrPages[$i];
-			$onePage = get_post($temp_page_id);
+			$onePage = get_post( $arrPages[$i]->ID );
 
 			$tmpPost = $post;
 			$post = $onePage;

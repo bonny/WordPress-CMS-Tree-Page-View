@@ -4,8 +4,8 @@ Donate link: http://eskapism.se/sida/donate/
 Tags: page, pages, posts, custom posts, tree, cms, dashboard, overview, drag-and-drop, rearrange, management, manage, admin
 Text Domain: cms-tree-page-view
 Requires at least: 3.8
-Tested up to: 4.2
-Stable tag: 1.3.2
+Tested up to: 4.4.2
+Stable tag: 1.3.3
 
 Adds a tree view of all pages & custom posts. Get a great overview + options to drag & drop to reorder & option to add multiple pages.
 
@@ -116,6 +116,11 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 
 == Changelog ==
+
+= 1.3.3 (March 2016) =
+
+- Fix an error with WPML. Fixes https://wordpress.org/support/topic/all-pages-in-all-languages-showing-with-latest-wpml.
+- Fix an error with a filter. Fixes https://wordpress.org/support/topic/pages-not-displayed-after-updating-to-132-unknown-column-ids.
 
 = 1.3.2 (March 2016) =
 
