@@ -251,14 +251,13 @@ function cms_tpv_add_pages() {
 
 		$new_menu_order ++;
 
-		if ('publish' == $post_status) { /* Check if the current user has the capabilities to publish specific post types, before publishing */
-		    if ($ref_post->post_type == 'post' && !current_user_can('publish_posts')) {
-		        $post_status = "pending";
-            }
-			if ($ref_post->post_type == 'page' && !current_user_can('publish_pages')) {
+		if ( 'publish' == $post_status ) { /* Check if the current user has the capabilities to publish specific post types, before publishing */
+
+			if ( ! current_user_can( $post_type_object->cap->publish_posts ) ) {
 				$post_status = "pending";
 			}
-        }
+
+		}
 
 		$newpost_args = array(
 			"menu_order"  => $new_menu_order,
