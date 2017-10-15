@@ -1305,9 +1305,9 @@ function cms_tpv_get_pages($args = null) {
 	// only run if wpml is available or always?
 	// Note: get_pages filter uses orderby comma separated and with the key sort_column
 	$get_posts_args["sort_column"] = str_replace(" ", ", ", $get_posts_args["orderby"]);
-	
+
 	// We only fetch ids above, but if we run the get_pages filter we need to send pages as object
-	
+
 	$pages_as_objects = array();
 
 	foreach ($pages as $page_id) {
@@ -1736,9 +1736,6 @@ function cms_tpv_move_page() {
 
 	global $wpdb;
 
-	//if ( !current_user_can( CMS_TPV_MOVE_PERMISSION ) )
-	//	die("Error: you dont have permission");
-
 	$node_id = $_POST["node_id"]; // the node that was moved
 	$ref_node_id = $_POST["ref_node_id"];
 	$type = $_POST["type"];
@@ -1749,11 +1746,19 @@ function cms_tpv_move_page() {
 	$_POST["skip_sitepress_actions"] = true; // sitepress.class.php->save_post_actions
 
 	if ($node_id && $ref_node_id) {
-		#echo "\nnode_id: $node_id";
-		#echo "\ntype: $type";
-
 		$post_node = get_post($node_id);
 		$post_ref_node = get_post($ref_node_id);
+
+		$post_node_post_type_object = get_post_type_object($post_node->post_type);
+		$post_ref_node_post_type_object = get_post_type_object($post_ref_node->post_type);
+
+		$user_can_edit_post_node_post = apply_filters("cms_tree_page_view_post_can_edit", current_user_can( $post_node_post_type_object->cap->edit_post, $node_id), $node_id);
+		$user_can_edit_post_ref_node_post = apply_filters("cms_tree_page_view_post_can_edit", current_user_can( $post_ref_node_post_type_object->cap->edit_post, $ref_node_id), $ref_node_id);
+
+		// Check that user is allowed to edit both pages thare are to be moved
+		if (!$user_can_edit_post_node_post || !$user_can_edit_post_ref_node_post) {
+			exit;
+		}
 
 		// first check that post_node (moved post) is not in trash. we do not move them
 		if ($post_node->post_status == "trash") {
