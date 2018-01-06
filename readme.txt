@@ -117,6 +117,11 @@ Now the tree with the pages will be visible both on the dashboard and in the men
 
 == Changelog ==
 
+= 1.5 (January 2018) =
+
+- Remove unused function `cms_tpv_add_page()`.
+- Add nonce check when moving page.
+
 = 1.4 (October 2017) =
 
 - Check that a user is allowed to edit pages/posts when making AJAX call, making sure users with subscribers role can't move pages.
