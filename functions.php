@@ -1228,7 +1228,6 @@ function cms_tpv_pages_page() {
 
 	?>
 	<div class="wrap">
-		<?php echo get_screen_icon(); ?>
 		<h2><?php
 
 			$page_title = sprintf(_x('%1$s Tree View', "headline of page with tree", "cms-tree-page-view"), $post_type_object->labels->name);
